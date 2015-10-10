@@ -37,7 +37,7 @@ Show that among any twelve \textbf{different} $2$-digit numbers there can be fou
 \end{theorem}
 \begin{proof}
 We are looking exactly for those numbers which difference is divisible by $11$, positive and less than $100$. For every two given numbers their difference is trivially positive and $<100$ (convince yourself).\\
-Now divide the numbers into $11$ groups depending on their reminder modulo $11$. There is $12$ numbers put into $11$ such groups, so by the pigeonhole principle there must be a pair of numbers with same remainder modulo $11$. Taking difference of these numbers is exactly what we wanted.
+Now divide the numbers into $11$ groups depending on their reminder modulo $11$. There are $12$ numbers put into $11$ such groups, so by the pigeonhole principle there must be a pair of numbers with same remainder modulo $11$. Taking difference of these numbers is exactly what we wanted.
 \end{proof}
 
 \begin{theorem}
@@ -70,16 +70,30 @@ If any of edges $AB, BC, AC$ is blue, we have found a same colour triple (e.g. i
 \section{Problems}
 
 \begin{enumerate}
-	\subsection*{Easy}
-	\item{Prove that in a group of at least $2$ people there are always two people who have the same number of acquaintances in a group.}
-	
+	\subsection*{Easy}	
 	\item{Let $n\geq10$ and let $S$ be a subset of $\{1,2,\dots,n^{2}\}$} that has \textbf{exactly} $10$ elements. Prove that there are two non-empty disjoint subsets $A$ and $B$ of the set $S$ such that the sum of the elements of $A$ is equal to the sum of elements of $B$.
 	
+	\item{Show that among $9$ points with integer coordinates in three dimensional space there are two whose midpoint has integer coordinates.}
+	
 	\subsection*{Medium}
+	\item{Prove that in a flock of at least $2$ sheep there are always two sheep who have the same number of comrades in the group.}
+	
 	\item{Show that among any $n+2$ integers, either there are two whose difference is a multiple of $2n$, or there are two whose sum is divisible by $2n$.}
+	
+	\item{There are $5$ points in a square $2\times 2$. Prove that $2$ of these points are at most $\sqrt2$ apart.}
+	
+	\item{You can easily cover $8\times 8$ chessboard with $32$ $2\times 1$ dominoes. Suppose that top-right and bottom-left corner squares are removed. Can such chessboard be still covered with dominoes?}
 
 	\subsection*{Difficult}
 	\item{Let $n\geq3$, and $S$ be a set of \textbf{more than} $\frac{2^{n+1}}{n}$ \textbf{distinct} points with coordinates of the form $(\pm1,\pm1,\dots,\pm1)$ in $n$-dimensional space. Prove that there are three distinct points that form an equilateral triangle.}
+	
+	\item{There are $33$ rooks placed on an $8\times 8$ chessboard. Prove that there are $5$ rooks that does not attack each other.}
+	
+	\item{Prove that every integer sequence of length $n^2+1$ contains a strictly monotonic subsequence of length $n+1$.}
+	
+	\item{Prove that from any set of $200$ natural numbers we can choose $100$ whose sum is divisible by $100$.}
+	
+	\item{Prove that among any $101$ real numbers there exists a pair of numbers $u, v$ such that $100|u - v|\cdot|1-uv| \leq (1 + u^{2})(1 + v^{2})$}
 	
 \end{enumerate}
 \end{document}
