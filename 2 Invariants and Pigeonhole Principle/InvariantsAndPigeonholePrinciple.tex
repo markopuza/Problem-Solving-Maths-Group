@@ -1,0 +1,87 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+
+\newtheorem{theorem}{Example}
+
+\title{\textbf{Pigeonhole Principle \& (maybe) Invariants}}
+\date{Week 4}
+\author{Miroslav Stankovic\\ Marko Puza}
+\begin{document}
+\maketitle
+
+\section{Theory}
+\subsection*{Pigeonhole Principle}
+The \emph{Pigeonhole principle} (also known as \emph{Dirichlet's principle}) states that if $n$ pigeons are put into $m$ holes with $m < n$, then there must exist a hole containing at least two pigeons. \\
+As easy and intuitive as this all may seem, this principle can be actually used to obtain a surprising range of possibly unexpected results.
+\\\\
+Generalizing and formulating the principle more precisely: \\
+\emph{For natural numbers $k$ and $n$, if $n = km + 1$ objects are distributed among $m$ sets, at least one set will contain at least $k + 1$ objects.}
+\\\\
+In general, when deciding what problem solving technique should you use, there is a simple pattern suggesting that the Pigeonhole principle might be a sensible choice:\\
+You are given a set of objects $M$ and it is needed to prove the existence of objects in $M$, satisfying given condition. \\
+The toughest part of a process is usually to \emph{recognize what are the pigeons and what are the holes}. Let's take a look at some examples:
+
+\begin{theorem}
+There exist a pair of people from Edinburgh that have the same number of hairs on their heads.
+\end{theorem}
+\begin{proof}
+A person's head has no more than $300 000$ hairs, the popoulation of Edinburgh is over $450 000$. Therefore, by pigeonhole principle, there must exist such pair.
+\end{proof}
+
+\begin{theorem}
+Show that among any twelve \textbf{different} $2$-digit numbers there can be found a pair of numbers such that their difference is a $2$-digit number which digits are same.
+\end{theorem}
+\begin{proof}
+We are looking exactly for those numbers which difference is divisible by $11$, positive and less than $100$. For every two given numbers their difference is trivially positive and $<100$ (convince yourself).\\
+Now divide the numbers into $11$ groups depending on their reminder modulo $11$. There is $12$ numbers put into $11$ such groups, so by the pigeonhole principle there must be a pair of numbers with same remainder modulo $11$. Taking difference of these numbers is exactly what we wanted.
+\end{proof}
+
+\begin{theorem}
+Prove that if $a$ and $b$ are coprime integers, then the decimal expression for $\frac{a}{b}$ is either terminated or periodic with period at most $b - 1$. 
+\end{theorem}
+\begin{proof}
+Consider performing the division $a/b$. At each step of a division, we are left with a remainder which value is among $0,1,\dots,b-1$. If the remainder is $0$ at some point, the decimal representation terminates and we are done. \\
+Suppose now that all remainders are nonzero and take a look at any $b$ consecutive remainders. By the pigeonhole principle (there is $b$ holes/numbers and $b-1$ pigeons/remainders) there must be two same remainders among them. \\
+But this means that the digits in the expression will now repeat, because the remainder exactly determines the next digit in the expression, which determines the next remainder (and so on). Furthermore, they will repeat with period no more than $b - 1$.
+\end{proof}
+
+\begin{theorem}
+Let $n$ be a natural number. Select now $n + 1$ numbers from  $\{1,2,\dots,2n\}$. Prove that among selected numbers there exist a pair of numbers such that their divide each other.
+\end{theorem}
+\begin{proof}
+We can rewrite each of the selected numbers $x_{1}, x_{2}, \dots,x_{n+1}$ as $x_{i} = 2^{k_{i}}l_{i}$, where both $k_{i}$ and $l_{i}$ are natural numbers and  $l_{i}$ is odd. \\
+Note now that only possible values of $l_{i}$ are $1,3,\dots,2n - 1$, which is $n$ numbers altogether. Hence, since we have selected $n+1$ numbers, by the pigeonhole principle there must be some numbers $x_{a}$ and $x_{b}$ that share their odd part: $l_{a} = l_{b}$. It is now obvious that the smaller of these numbers must the greater one.
+\end{proof}
+
+\begin{theorem}[Theorem of friends and strangers]
+Suppose a party with $6$ people. For any two of them, they are either meeting for the first time - in which case we call them mutual strangers - or they have met before - in which case we call them mutual friends.\\
+Prove that there exists a triple of people that are all (pairwise) mutual strangers or all (pairwise) mutual friends.
+\end{theorem}
+\begin{proof}
+Consider people as the nodes of a graph where being friends and being strangers are edges represented by two different colours.\\
+Choose a person $P$. There are $5$ edges leaving $P$, each coloured red or blue. By the pigeonhole principle at least three of them must be coloured the same colour. Let $A,B,C$ be the other ends of these three edges, all of the same colour, say blue.\\
+If any of edges $AB, BC, AC$ is blue, we have found a same colour triple (e.g. if it was $AB$, our triple would be $ABP$), otherwise all of them must be red and that means $ABC$ is the sought triple.
+\end{proof}
+
+\section{Problems}
+
+\begin{enumerate}
+	\subsection*{Easy}
+	\item{Prove that in a group of at least $2$ people there are always two people who have the same number of acquaintances in a group.}
+	
+	\item{Let $n\geq10$ and let $S$ be a subset of $\{1,2,\dots,n^{2}\}$} that has \textbf{exactly} $10$ elements. Prove that there are two non-empty disjoint subsets $A$ and $B$ of the set $S$ such that the sum of the elements of $A$ is equal to the sum of elements of $B$.
+	
+	\subsection*{Medium}
+	\item{Show that among any $n+2$ integers, either there are two whose difference is a multiple of $2n$, or there are two whose sum is divisible by $2n$.}
+
+	\subsection*{Difficult}
+	\item{Let $n\geq3$, and $S$ be a set of \textbf{more than} $\frac{2^{n+1}}{n}$ \textbf{distinct} points with coordinates of the form $(\pm1,\pm1,\dots,\pm1)$ in $n$-dimensional space. Prove that there are three distinct points that form an equilateral triangle.}
+	
+\end{enumerate}
+\end{document}
+
+sources: http://www.imomath.com/index.php?options=526&lmm=0
