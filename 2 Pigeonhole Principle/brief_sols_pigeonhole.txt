@@ -1,0 +1,74 @@
+For solutions of some (and other pigeonhole) problems see: http://www.imomath.com/index.php?options=526&lmm=0
+_________________________________________________________________________________________________________________
+
+1.	Pigeons: Subsets of S (2^n)
+	Holes: Possible sums of any subset of S (less than n^3)
+	-> Work with all subsets (not necessarily disjoint), construct the disjoint sets later
+
+2.	Pigeons: Points (9)
+	Holes: Possible combinations of parities of coordinates (8)
+
+3.	Pigeons: Sheep (n)
+	Holes: Numbers of comrades of each sheep (0,..,n-1)
+	-> Consider cases where there is a sheep with no comrades and where not
+
+4.	Pigeons: Integers (n + 2)
+	Holes: Groups od remainders mod 2n ({0}, {n}, {i, 2n - i} for i = 1,2,...,n-  --> there is n + 1 such groups altogether)
+	-> Suppose there are no two whose difference is a multiple of 2n and prove that there must be two
+	   whose sum is divisible by 2n
+
+5.	Pigeons: Points (5)
+	Holes: Divide 2x2 square into 1x1 parts (4)
+
+6.	Pigeons: Dominoes
+	Holes: Colors of squares on which the dominoes are placed
+	-> Count how many white and how many black squares are occupied by dominoes. After having placed 
+	   each individual domino, what can you say about these numbers? 
+
+7.	This problem was originally featured in Putnam competition, 2000-B6
+	For each point P in S, let s_p denote the set of n points a distance 2 from P (these are precisely the points
+	that differ in one coordinate from P).
+	Now note that every two points of s_p are of the same distance (are equidistant). Thus we now need only to show that there exists
+	a point P (not necessarily from S) for which s_p contains at least three points that are from S.
+	Pigeons: points (each point is part of n sets s_p, since it has n coordinates -> we need to put each point in some hole n times.
+		     -> more than n * 2^(n+1)/n  ==  more than 2^(n+1) placements)
+	Holes: sets s_p - one for each point (2^n)
+
+8.	Pigeons: Rooks (33)
+	Holes: Diagonals of the chessboard (not only main diagonal; also not continuous ones - see example below) (8)
+	Example: Here the #'s denote one diagonal
+			 --#------
+			 -#-------
+			 #-------#
+			 -------#-
+			 ------#--
+			 -----#---
+			 ----#----
+			 ---#-----
+
+9.	Pigeons: Numbers (n^2 + 1)
+	Holes: For each number consider length of the longest decreasing subsequence which starts at that number 
+		   (these must be < n, when we seek contratidiction and also >= 1). Consider holes to be these lengths (n of them)
+	-> By contradiction. Pigeonhole principle says that there must be n + 1 numbers for which the lengths of the longest subsequences
+	   starting with them are equal.  Can you now say that the sequence of these numbers is monotonic? 
+
+10. This is an instance of the zero-sum problem. ( https://en.wikipedia.org/wiki/Zero-sum_problem )
+	We will prove a more general statement: From any set of (2n - 1) integers we can choose n whose sum is divisible by n.
+	High level proof construction: 
+		-> Prove that the statement holds for all values where n is equal to some prime number (harder part)
+		-> Prove by induction that if statement holds for n = k and n = l, it will also hold for n = kl
+	The whole proof can be found for example in this paper: https://www.physics.harvard.edu/uploads/files/undergrad/probweek/sol80.pdf
+
+
+11. This problem was originally featured in the national round of Slovak Maths Olympiad (2012/3)
+	You can proceed (each step is equivalent to the previous one) as follows:
+	-> original inequality
+	-> 100|(u - v)(1 - uv)| <= (1 + u^2)(1 + v^2)	(push inside the abs.)
+	-> 100|u - v - u^2v + uv^2| <= (1 + u^2)(1 + v^2)  (distribute)
+	-> |u(1 + v^2) - v(1 + u^2)| <= (1 + u^2)(1 + v^2) / 100  (divide)
+	-> |u/(1 + u^2) - v/(1 + v^2)| <= 1/100  (divide by positive number)
+
+	Now, consider all values of function f(x) = x/(1 + x^2). We must have -1/2 <= f(x) <= 1/2 for all x (convince yourself)
+	At this step, we can use the Pigeonhole principle:
+	Pigeons: Numbers (101)
+	Holes: Intervals of length 1/100 between -1/2 and 1/2 (100)
