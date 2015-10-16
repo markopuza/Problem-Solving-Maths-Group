@@ -1,0 +1,55 @@
+\documentclass[11pt,a5paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[margin=0.47in]{geometry}
+
+
+\newtheorem{theorem}{Example}
+
+\title{\textbf{Pigeonhole Principle}}
+\date{Week 4}
+\author{Miroslav Stankovic\\ Marko Puza}
+\begin{document}
+\maketitle
+
+\section{Theory}
+\subsection*{Invariants}
+
+The \emph{Invariants} (also known as \emph{The Invariance Principle}) is an extremely useful problem solving technique. Problems where this strategy can be used are often easily recognizable and the tricky part is usually to find a suitable invariant. It is frequently used to solve probelms involving algorithms (transformations, games) where some task is repeatedly performed.  \textbf{When there is repetition, look for what does not change!}
+
+In algorithm problems, there is usually a starting state $S$ and a sequence of legal actions (steps, moves). The question tend to be one of following: \\
+$1$. Can a given state be reached from S?\\
+$2$. Find all states reachable from S.\\
+$3$. Is there a convergence to an end state?\\
+$4$. Can we return to the starting state S after given number of moves?\\\\\\\\\\
+
+\begin{theorem}
+	Lorem ipsum talor ornae, et learom otna demoner a dulis?
+\end{theorem}
+\begin{proof}
+	Blah. 
+\end{proof}
+
+\section{Problems}
+
+\begin{enumerate}
+	\subsection*{Easy}	
+	
+	\subsection*{Medium}
+	\item{Problem.}
+
+	\subsection*{Difficult}
+	
+	
+\end{enumerate}
+
+\begin{thebibliography}{9}
+\bibitem{IMO Math} Duke Putnam Preparation. 2012. [ONLINE] Available at: \texttt{http://www.imomath.com/index.php?options=526\&lmm=0}. [Accessed 10 October 15].
+
+\end{thebibliography}
+
+\end{document}
+http://bayanbox.ir/view/3155187039802412539/Problem-Solving-Strategies-Arthur-Engel.pdf
+
