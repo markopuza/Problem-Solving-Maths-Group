@@ -17,19 +17,43 @@
 \section{Theory}
 \subsection*{Invariants}
 
-The \emph{Invariants} (also known as \emph{The Invariance Principle}) is an extremely useful problem solving technique. Problems where this strategy can be used are often easily recognizable and the tricky part is usually to find a suitable invariant. It is frequently used to solve probelms involving algorithms (transformations, games) where some task is repeatedly performed.  \textbf{When there is repetition, look for what does not change!}
+The \emph{Invariants} (also known as \emph{The Invariance Principle}) is an extremely useful problem solving technique. Problems where this strategy can be used are often easily recognizable and the tricky part is usually to find a suitable invariant. It is frequently used to solve probelms involving algorithms (transformations, games) where some task is repeatedly performed. 
 
-In algorithm problems, there is usually a starting state $S$ and a sequence of legal actions (steps, moves). The question tend to be one of following: \\
-$1$. Can a given state be reached from S?\\
-$2$. Find all states reachable from S.\\
-$3$. Is there a convergence to an end state?\\
-$4$. Can we return to the starting state S after given number of moves?\\\\\\\\\\
+In algorithm problems, there is usually a starting state $S$ and a sequence of legal actions (steps, moves). The question tend to be one of following: 
+\begin{enumerate}
+\item {Can a given state be reached from $S$?}
+\item {Find all states reachable from $S$.}
+\item {Is there a convergence to an end state?}
+\item {Can we return to $S$ after given number of moves?}
+\end{enumerate}
+
+In such problems, it is often very helpful to look at properties which does not change (invariants) or chane in a very predictable way (monovariants) as process continues. 
 
 \begin{theorem}
-	Lorem ipsum talor ornae, et learom otna demoner a dulis?
+	A dragon has 100 heads. A knight can cut off 15, 17, 20, or 5 heads, respectively, with one blow of his sword. In each of these cases, 24, 2, 14, or 17 heads grow on its shoulders. If all heads are blown off, the dragon dies. Can the dragon ever die?
 \end{theorem}
 \begin{proof}
-	Blah. 
+	In this example, the starting state is "Dragon with 100 heads" and leagal actions are cutting of 15, 17, 20, or 5 of his heads. The question is of type 1. - can we reach state "Dragon has no heads"?
+	Examining each of the possible actions and taking into account the heads grown back, we find that:
+	\[(24 - 15) \equiv (2 - 17) \equiv (14 - 20) \equiv (17 - 5) \equiv 0 \pmod 3\]
+No matter what action is taken, he can never change the number of heads of the dragon $\pmod 3$. The number of heads $\pmod 3$ is our invariant. Since we start at $100 \equiv 1 \pmod 3$, we can never get to $0$. The dragon can never die.
+\end{proof}
+
+\begin{theorem}
+	Several stones are placed on an infinite (in both directions) strip of squares. As long as there are at least two stones on a single square, you may pick up two such stones, then move one to the preceding square and one to the following square. Is it possible to return to the starting configuration after a finite sequence of such moves?
+\end{theorem}
+\begin{proof}
+	Starting state is some initial configuration of stones, and the only possible action is to remove two stones and and one to each of neghbouring squares.
+	Let's label the strip with consecutive integers and let $n_i$ denote number of the squere containing the stone $\#i$. 
+	
+	Let $X = \sum_{i}{n_i^2}$, and consider what happens every time we take the action. First, $X$ decreases by $2n^2$ as we remove two stones from square labeled $t$. Then we add a stone to squares labeled $t-1$ and $t+1$, which increases $x$ by $(t-1)^2 + (t+1)^2 = 2t^2 + 2$. The value of $X$ is therefore increased by $2$ everytime we take the action. Value $X$ is our monovariant. Since $X$ increases over time, we can never return to the starting state
+\end{proof}
+
+\begin{theorem}
+	There are $5$ coins on the table, all of them show tails. In one step, you can choose two coins and turn them upside down. Is it possible to turn all the coins to show heads?
+\end{theorem}	
+\begin{proof}
+	At each step, consider number of coins showing heads $H$. If two heads are turned, $H$ decreases by two, if two tails are turned, $H$ increases by two, and if one head and one tail are turned, $H$ does not change. In each case the parity of $H$ stays the same. Since it is $0$ in the beginning, it can never become $3$ - it is not possible to turn coins to show three heads. 
 \end{proof}
 
 \section{Problems}
@@ -46,7 +70,9 @@ $4$. Can we return to the starting state S after given number of moves?\\\\\\\\\
 \end{enumerate}
 
 \begin{thebibliography}{9}
-\bibitem{IMO Math} Duke Putnam Preparation. 2012. [ONLINE] Available at: \texttt{http://www.imomath.com/index.php?options=526\&lmm=0}. [Accessed 10 October 15].
+\bibitem{KMS} Ondrej Budáč, Tomáš Jurík, and Ján Mazák. \emph{Zbierka úloh KMS}. Trojsten, Bratislava, 2010.
+
+\bibitem{Engel}Arthur Engel. \emph{Problem-Solving Strategies}. Springer, 1998.
 
 \end{thebibliography}
 
