@@ -1,0 +1,192 @@
+\documentclass[11pt,a5paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[margin=0.47in]{geometry}
+
+
+\newtheorem{theorem}{Example}
+
+\title{\textbf{Pigeonhole Principle}}
+\date{Week 5}
+\author{Miroslav Stankovic\\ Marko Puza}
+\begin{document}
+\maketitle
+
+\section{Theory}
+\subsection*{Invariants}
+
+The \emph{Invariants} (also known as \emph{The Invariance Principle}) is one of the most profound problem solving techniques. Problems that may be approached by this technique are often easily recognizable with the tricky part being how to find a suitable invariant.\\ 
+
+\noindent\textbf{Invariant is a property whose value remains constant when the transformations are applied.}\\
+
+\noindent The most frequent use is on problems involving algorithms (transformations, games), recursion or generally those where some process is performed repeatedly. In algorithm problems, there is usually a starting state $S$ and a sequence of legal actions (steps, moves). The questions tend to be one of following: 
+\begin{enumerate}
+\item {Can a given state be reached from $S$?}
+\item {Find all states reachable from $S$.}
+\item {Is there a convergence to an end state?}
+\item {Can we return to $S$ after given number of moves?}
+\end{enumerate}
+
+\noindent After having found an invariant, it can be easily shown that a given state cannot be achieved if the value of the property differs from the initial state. \\
+
+\noindent A less strict version of the Invariance principle are \emph{monovariants}. \\\textbf{Monovariant} is a property whose value only changes in one direction - it will either always increase or always decrease. Determining an invariant or a monovariant is in some cases obvious from the given conditions, but usually we are not that lucky and no clear invariant property can be easily determined. When dealing with numbers, an example of a common invariant are arithmetic operations on the numbers (sum, product, sum of squares, sum of differences...), possibly modulo $m$.\\
+
+\noindent Let's now take a look at the worked examples equipped with a very powerful motto: \textbf{Where some stuff keeps repeating, seek something that stays the same.}
+
+\section{Examples}
+\begin{theorem}
+	A mutant sheep has 100 heads. A brave knight can cut off 15, 17, 20 or 5 heads with one blow of his sword. In each of these cases, 24, 2, 14 or 17 heads (\textbf{respectively}) will grow on its shoulders. If all heads are blown off, the sheep dies. Can the sheep ever die?
+\end{theorem}
+\begin{proof}
+	In this example, the starting state is "sheep has 100 heads" and legal actions are cutting of 15, 17, 20 or 5 of its heads. The question is of type 1. - Can we reach a state "Sheep has no heads"?
+	Examining each of the possible actions and taking into account the heads grown back, we find that:
+	\[(24 - 15) \equiv (2 - 17) \equiv (14 - 20) \equiv (17 - 5) \equiv 0 \pmod 3\]
+No matter what action the brave knight takes, he can never change the number of heads modulo $3$. \\
+The number of heads modulo $3$ is therefore our sought invariant. Since we start at $100 \equiv 1 \pmod 3$ heads, we can never get to $0$. Therefore, the fierce mutant sheep is immortal.
+\end{proof}
+
+\begin{theorem}
+	There are $5$ coins on the table, all of them show tails. In one step, you can choose two coins and turn them upside down. Is it possible to turn all the coins to show heads?
+\end{theorem}	
+\begin{proof}
+At each step, consider number of coins showing heads $H$. If two heads are turned, $H$ decreases by two, if two tails are turned, $H$ increases by two, and if one head and one tail are turned, $H$ does not change. In each case the parity of $H$ stays the same. \\
+The parity of $H$ is therefore our invariant. Since $H = 0$ has even parity in the beginning, $H$ can be never equal to $5$, which has odd parity.
+\end{proof}
+
+\begin{theorem}
+Numbers $1,2,\dots,2n$ are written on a blackboard, where n is an \textbf{odd} positive integer. At each step, we will erase two numbers $a, b$ from the blackboard and replace them by the number $|a - b|$. We will repeat the process until we have only one number remaining on a blackboard. Show that this number must be odd.
+\end{theorem}
+\begin{proof}
+Consider a sum of all numbers on a blackboard \\ $S = \sum_{i = 1}^{2n} = \frac{2n(2n+1)}{2} = n(2n + 1)$ and note that $S$ is odd. Now, every time we perform an action of replacing numbers $a, b$ by $|a - b|$, $S$ is first decreased by $a + b$ (this corresponds to erasing $a, b$) and then increased by $|a - b|$.\\
+We can use the equalities $a + b = \max{(a,b)} + \min{(a,b)}$ and $|a - b| = \max{(a,b)} - \min{(a,b)}$ to see that at each step, $S$ is decreased by $2\min{(a,b)}$. Thus the parity of $S$ is preserved during all steps - it is our invariant. \\
+When there is only one number remaining, $S$ is equal to this number. Since $S$ was odd in the start, the last number must be therefore odd as well. 
+
+\end{proof}
+
+\begin{theorem}
+	Several stones are placed on an infinite (in both directions) strip of squares. As long as single square contains at least 2 stones, you may pick up two of them, then move one to the preceding square and one to the following square. Is it possible to return to the starting configuration after a finite sequence of such moves?
+\end{theorem}
+\begin{proof}
+	Starting state is some initial configuration of stones and the only possible action is to remove two stones and add one to each of the neghbouring squares.\\
+Let's label the squares on a strip with consecutive integers and let $n_i$ denote the label of the square where $i$-th stone is placed.\\ 
+Now let $X = \sum_{i}{n_i^2}$, and consider what happens every time we take the action. First, as we remove two stones from square labeled $t$, $X$ decreases by $2t^2$. Then we add a stone to squares labeled $t-1$ and $t+1$, which increases $X$ by $(t-1)^2 + (t+1)^2 = 2t^2 + 2$. The value of $X$ is therefore increased by $2$ everytime we take the action. \\
+Value $X$ is our monovariant. Since $X$ increases over time, we can never return to the starting state.
+\end{proof}
+
+\begin{theorem}[a famous 'Fifteen Puzzle']
+We are given a $4\times4$ box with fifteen $1\times1$ square blocks in it, numbered 1 through 15 as shown below, with one empty square into which other blocks can be moved. If one starts with the configuration shown on the left, is it possible to slide the blocks around to achieve the position on the right? 
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|l|l}
+\cline{1-4}
+ 1 & 2 & 3 & 4 &  \\ \cline{1-4}
+ 5 & 6 & 7 & 8 &  \\ \cline{1-4}
+ 9 & 10 & 11 & 12 & \\ \cline{1-4}
+ 13 & 15 & 14 &  &  \\ \cline{1-4}
+\end{tabular}
+\quad
+\begin{tabular}{|l|l|l|l|l}
+\cline{1-4}
+ 1 & 2 & 3 & 4 &  \\ \cline{1-4}
+ 5 & 6 & 7 & 8 &  \\ \cline{1-4}
+ 9 & 10 & 11 & 12 & \\ \cline{1-4}
+ 13 & 14 & 15 &  &  \\ \cline{1-4}
+\end{tabular}
+\end{table}
+
+\end{theorem}
+
+\begin{proof}
+Let us first virtually label the empty block as number $16$ - this will ease dealing with it. \\
+Now, suppose that all sixteen blocks are lined up in a $1\times16$ row formed by placing the original $1\times4$ rows end-to-end. Thus every board position corresponds to a permutation of these sixteen boards and every move on a board corresponds to switching block number $16$ (the empty one) with some other block.\\
+At this point, we can rephrase the problem in the equivalent question: \\
+Is it possible to obtain the permutation $q = 1234\dots13\ 14\ 15\ 16$ from permutation $p = 1234\dots13\ 15\ 14\ 16$ by only performing the allowed switches?\\
+Suppose it is possible. Note the empty block is at the same position in both of the configurations, so during any sequence of switches that transformed left configuration into the right one, there must have been an even number of switches (because the empty block moved up as many times as down and left as many times as right). \\
+Since a single switch of two numbers in a permutation changes its parity\footnote{for theory on parity of a permutation see Apendix}, switching two numbers an even number of times will preserve the permutation's parity. Hence our invariant is a parity of permutation.
+Finally, we can see that $q$ is even (it contains zero inversions) while $p$ is odd (it contains one inversion), which contradicts our invariant.\\
+Therefore, it is not possible to obtain the right configuration from the left one.
+
+\end{proof}
+
+\section{Problems}
+
+\begin{enumerate}
+	\subsection*{Easy}
+	\item{Euclid, Euler and Wiles play poker, starting with 100, 120 and 200 chips respectively. Is it possible that they end up with 150 chips each?}
+	
+<<<<<<< HEAD
+	\item{The vertices of a hexagon are labeled by numbers $1, 0, 1, 0, 0, 0$. You can pick arbitary two numbers on neighbouring vertices and increase them by one, as many times as you like. Can you make the numbers on vertices all equal?}
+	
+	\item{Euclid, Euler and Wiles play poker, starting with 100, 120 and 200 chips respectively. Is it possible that they end up with 150 chips each?}
+	
+=======
+>>>>>>> dd6c3589f5d2fcc248b21273ea1c10dadd7e3bff
+	\item{Consider a $4\times 4$ matrix of ones. In a turn you can  multiply all values in any row or column by $(-1)$. Is it possible, after finite number of turns, to end up with a matrix with $1$ on every position except for the top-right corner?}
+		
+	\item{In a certain island there are 13 grey, 15 brown and 17 pink chameleons. If two chameleons of different colors meet, both of them change to the third color. No other color changes are allowed. Is it possible that after a few such color transitions all the chameleons have the same color?}
+	
+<<<<<<< HEAD
+	\subsection*{Medium}
+	
+	\item{An $m\times n$ table is filled with numbers such that each row and column sum up to $1$. Prove
+that $m = n$.}
+	
+	\item{On an $n\times n$ board, there are $n^{2}$ squares, of which $n - 1$ are infected. Each second, any square that is adjacent to at least two infected becomes infected. Show that at least one square always remains uninfected.}
+	
+=======
+	\item{An $m\times n$ table is filled with numbers such that each row and column sum up to $1$. Prove
+that $m = n$.}
+	
+	\item{There is a positive integer in each square of a rectangular table. In each move, you may double
+each number in a row, or subtract $1$ from each number of a column. Prove that you can reach a table of zeros by using only these moves.}
+	
+	\item{Wayne Gretzky has 3 pucks labelled $A$, $B$, $C$ in an arena (as in all math, an infinite area!). He picks a puck at random, and fires it through the other $2$. He keeps doing this. Can the pucks return to their original spots after 2011 hits?}
+	\subsection*{Medium}
+
+>>>>>>> dd6c3589f5d2fcc248b21273ea1c10dadd7e3bff
+	\subsection*{Difficult}
+	
+	\item{There is a positive integer in each square of a rectangular table. In each move, you may double
+each number in a row, or subtract $1$ from each number of a column. Prove that you can reach a table of zeros by using only these moves.}
+	
+	\item{Wayne Gretzky has 3 pucks labelled $A$, $B$, $C$ in an arena (as in all math, an infinite area!). He picks a puck at random, and fires it through the other $2$. He keeps doing this. Can the pucks return to their original spots after 2011 hits?}
+
+	
+	\subsection*{Beautiful}
+	\item{Start with a penny on the bottom left corner of a chessboard.  You can clear a penny from a square if you also add two pennies to the board, one to the right, and one above, of the penny you remove.  You may only do that, however, if those squares are \textbf{empty}, as each square holds only one penny.\\
+Now consider a 3x3 square situated in the bottom left corner.  Can you ever clear all the pennies out of that square.  If so, how?  If not, why not? \\
+What if the chessboard is infinite off to the top and right?  What if you fix some other shapes besides a 3x3 square?  What if you have a 3D chessboard instead?}
+\end{enumerate}
+
+\section{Appendix}
+\emph{Inversion} in permutation $\sigma$ is pair of numbers $x, y$ in $\sigma$ such that $x < y$ and $\sigma(x) > \sigma(y)$. (e.g. $(1,3), (1,2), (2,3)$ are all inversions of permutation $3\ 2\ 1\ 4$)\\
+\noindent\emph{Parity of a permutation} $\sigma$ is the parity of the number of inversions in $\sigma$.\\
+
+\noindent\emph{Proof, that switching two arbitraty numbers $x, y$ in permutation $\sigma$ changes it's parity}:\\
+Let's break up the numbers into three groups.
+\begin{enumerate}
+\item{The numbers either before both $x$ and y or after both $x$ and $y$}
+\item{The numbers between $x$ and $y$}
+\item{$x$ and $y$}
+\end{enumerate}
+The same numbers will be before and after the numbers in group 1 so their contribution to the grand total of inversions will not change. \\
+The numbers in group 2 will each contribute to the grand total of inversions twice - once for the change in $x$'s position (either they were less than $x$ or $x$ was less than them.) and again for the change in $y$'s position. Thus their total contribution will be to change the grand total of inversions by an even number. This will not affect the parity of the permutation. \\
+Finally, $x$ and y switching places will add or subtract 1 from the grand total of inversion depending on whether $x$ or $y$ is greater. Thus the parity of the grand total (odd or even) will change.
+
+
+\begin{thebibliography}{9}
+\bibitem{KMS} Ondrej Budáč, Tomáš Jurík, and Ján Mazák. \emph{Zbierka úloh KMS}. Trojsten, Bratislava, 2010.
+
+\bibitem{Engel}Arthur Engel. \emph{Problem-Solving Strategies}. Springer, 1998.
+
+\bibitem{Robert Hochberg and Felix Lazebnik} Robert Hochberg and Felix Lazebnik.\emph{Invariants $I$}
+
+\end{thebibliography}
+
+\end{document}
+http://bayanbox.ir/view/3155187039802412539/Problem-Solving-Strategies-Arthur-Engel.pdf
+http://dogschool.tripod.com/permutation.html
+
