@@ -33,7 +33,7 @@ The \emph{Invariants} (also known as \emph{The Invariance Principle}) is one of 
 
 \noindent A less strict version of the Invariance principle are \emph{monovariants}. \\\textbf{Monovariant} is a property whose value only changes in one direction - it will either always increase or always decrease. Determining an invariant or a monovariant is in some cases obvious from the given conditions, but usually we are not that lucky and no clear invariant property can be easily determined. When dealing with numbers, an example of a common invariant are arithmetic operations on the numbers (sum, product, sum of squares, sum of differences...), possibly modulo $m$.\\
 
-\noindent Let's now take a look at the worked examples equipped with a very powerful motto: \textbf{Where some stuff keeps repeating, seek something that stays the same.}
+\noindent Let's now take a look at the worked examples equipped with a powerful motto: \textbf{Where some stuff keeps repeating, seek something that stays the same.}
 
 \section{Examples}
 \begin{theorem}
@@ -56,11 +56,11 @@ The parity of $H$ is therefore our invariant. Since $H = 0$ has even parity in t
 \end{proof}
 
 \begin{theorem}
-Numbers $1,2,\dots,2n$ are written on a blackboard, where n is an \textbf{odd} positive integer. At each step, we will erase two numbers $a, b$ from the blackboard and replace them by the number $|a - b|$. We will repeat the process until we have only one number remaining on a blackboard. Show that this number must be odd.
+Numbers $1,2,\dots,2n$ are written on a blackboard, where n is an \textbf{odd} positive integer. At each step, we will erase two numbers $a, b$ from the blackboard and replace them by number $|a - b|$. We will repeat the process until we have only one number remaining on a blackboard. Show that this number must be odd.
 \end{theorem}
 \begin{proof}
 Consider a sum of all numbers on a blackboard \\ $S = \sum_{i = 1}^{2n} = \frac{2n(2n+1)}{2} = n(2n + 1)$ and note that $S$ is odd. Now, every time we perform an action of replacing numbers $a, b$ by $|a - b|$, $S$ is first decreased by $a + b$ (this corresponds to erasing $a, b$) and then increased by $|a - b|$.\\
-We can use the equalities $a + b = \max{(a,b)} + \min{(a,b)}$ and $|a - b| = \max{(a,b)} - \min{(a,b)}$ to see that at each step, $S$ is decreased by $2\min{(a,b)}$. Thus the parity of $S$ is preserved during all steps - it is our invariant. \\
+We can use the equalities $a + b = \max{(a,b)} + \min{(a,b)}$ and $|a - b| = \max{(a,b)} - \min{(a,b)}$ to see that at each step $S$ is decreased by $2\min{(a,b)}$. Thus the parity of $S$ is preserved during all steps - it is our invariant. \\
 When there is only one number remaining, $S$ is equal to this number. Since $S$ was odd in the start, the last number must be therefore odd as well. 
 
 \end{proof}
@@ -138,17 +138,27 @@ that $m = n$.}
 	
 	\item{A king, moving according to the rules of chess, visited all the cells of the standard chessboard exactly once and returned to its original location. Prove that it made an even number of diagonal moves.}
 	
+	% ULOHA iKS 2013/2014 C5
+	\item {
+		There are two chips lying on a circle and both of them are white. 		The following two operations are legal:\\
+		$\rightarrow$ insert a new white chip onto a circle and recolor the neighbouring chips (from white to black and vice versa)\\
+		$\rightarrow$ if there is \textbf{at least three} chips on a circle, remove one white chip and recolor its neighbours\\
+		Is it possible to reach a state where there are only two chips remaining on the circle and both of them are black? 
+	}
+	
 	\subsection*{Beautiful}
 	\item{Start with a penny on the bottom left corner of a chessboard.  You can clear a penny from a square if you also add two pennies to the board, one to the right, and one above, of the penny you remove.  You may only do that, however, if those squares are \textbf{empty}, as each square holds only one penny.\\
 Now consider a 3x3 square situated in the bottom left corner.  Can you ever clear all the pennies out of that square.  If so, how?  If not, why not? \\
 What if the chessboard is infinite off to the top and right?  What if you fix some other shapes besides a 3x3 square?  What if you have a 3D chessboard instead?}
 \end{enumerate}
 
+\pagebreak
+
 \section{Appendix}
 \emph{Inversion} in permutation $\sigma$ is pair of numbers $x, y$ in $\sigma$ such that $x < y$ and $\sigma(x) > \sigma(y)$. (e.g. $(1,3), (1,2), (2,3)$ are all inversions of permutation $3\ 2\ 1\ 4$)\\
 \noindent\emph{Parity of a permutation} $\sigma$ is the parity of the number of inversions in $\sigma$.\\
 
-\noindent\emph{Proof, that switching two arbitraty numbers $x, y$ in permutation $\sigma$ changes it's parity}:\\
+\noindent\emph{Proof that switching two arbitraty numbers $x, y$ in permutation $\sigma$ changes it's parity}:\\
 Let's break up the numbers into three groups.
 \begin{enumerate}
 \item{The numbers either before both $x$ and y or after both $x$ and $y$}
@@ -165,7 +175,7 @@ Finally, $x$ and y switching places will add or subtract 1 from the grand total 
 
 \bibitem{Engel}Arthur Engel. \emph{Problem-Solving Strategies}. Springer, 1998.
 
-\bibitem{Robert Hochberg and Felix Lazebnik} Robert Hochberg and Felix Lazebnik.\emph{Invariants $I$}
+\bibitem{Robert Hochberg and Felix Lazebnik} Robert Hochberg and Felix Lazebnik. \emph{Invariants $I$}
 
 \end{thebibliography}
 
