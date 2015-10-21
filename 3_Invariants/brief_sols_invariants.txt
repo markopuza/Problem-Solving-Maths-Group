@@ -1,0 +1,36 @@
+1. Invariant: sum of chips
+
+2. Invariant: alternate sum of the numbers in vertices
+
+3. Invariant: sum of all valus modulo 4
+
+4. Invariant: difference of numbers of any two types of chameleons modulo 3
+
+5. Invariant: sum of all numbers
+
+6. Monovariant: perimeter of the infected area
+
+7. Invariant: Order of pucks after odd number of hits
+
+8. -> Convince yourself that it suffices to prove that it's possible to fill one column with zeroes, then:
+   Monovariant: maximal number in the column
+
+9. Invariant: parity of number of the column where the king is after odd number of diagonal moves
+
+10. -> It is not possible. This involves quite a huge trick.
+	We will introduce a brand new game (let's call this game 'Yellow-Blue game', which is equivalent to the problem statement:
+	In the start, there are two chips lying on a circle and the whole circle is colored yellow. We can do following operations:
+		- insert a new chip onto a circle and recolor both arcs that are between it and it's neighbours (from yellow to blue and vice versa)
+		- if there are at least three chips on a circle, we can remove one that has the neighbouring arc on the left side of the same color as the neighbouring arc on the right side. Then we will recolor the 'merged' arc between chips that were neighbours of the removed chip.
+	We will call the chips that have neighbouring arcs of the same color WHITE, and chips that have neighbouring arcs of different color BLACK.
+	-> Convince yourself that this game is equivalent to the problem statement
+	Now, the state where there are only two black chips in the original game corresponds to state where there is exactly one yellow and one blue arc in the Yellow-Blue game.
+	We need to prove that such state is not reachable in the Yellow-Blue game.
+
+	Proof: let Y denote number of yellow arcs and B the number of blue arcs.
+		   Note, that when doing the allowed operations, there are only two cases: 
+		   - One of Y or B increases by two and the other one decreases by 1. (+2 = -1 mod 3)
+		   - One of Y or B decreases by two and the other increases by 1. (-2 = 1 mod 3)
+		   Thus we can finish the proof by invariant: Y - B modulo 3 
+
+11. Won't give hints for this one :)
