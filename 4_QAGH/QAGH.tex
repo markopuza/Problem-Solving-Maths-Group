@@ -1,17 +1,17 @@
-\documentclass[11pt,a5paper]{article}
+	\documentclass[11pt,a5paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amsfonts}
 \usepackage[margin=0.47in]{geometry}
-
 
 \newtheorem{theorem}{Example}
 \newtheorem{exercise}{Exercise}
 \newtheorem*{Theorem}{Theorem}
 
 \title{\textbf{Mean Inequalities}}
-\date{Week 5}
+\date{Week 6}
 \author{Miroslav Stankovic\\ Marko Puza}
 \begin{document}
 \maketitle
@@ -25,13 +25,14 @@ to solve wide range of inequalities. \\
 
 \noindent We will be only concerned with real numbers (often only 
 non-negative real numbers). One of basic properties of real numbers 
-is that the square of a real number is non-negative, thus so is sum 
-of squares. This is the most basic useful inequality.
+is that the square of a real number is non-negative, thus so is any sum 
+of squares. Here follows the most simple but useful inequality.
 
-\begin{Theorem} \emph{Sum of squares inequality.}
-	If $x_1, x_2, \dots x_n \in \mathbf{R}$ and 
-	$\alpha_1, \alpha_2, \dots \alpha_n > 0$ then 
-	$\sum_{i=1}^n \alpha_1x_1^2\ge0$ with equality if and only if 
+\begin{Theorem}[Sum of squares inequality]
+	If $x_1, x_2, \dots, x_n \in \mathbb{R}$ and \\
+	$\alpha_1, \alpha_2, \dots \alpha_n  \in \mathbb{R}$,
+    with $\alpha_1, \alpha_2, \dots \alpha_n > 0$, then \\
+	$\sum_{i=1}^n \alpha_i x_i^2 \ge 0$ with equality if and only if 
 	$x_1 = x_2 = \dots = x_n = 0$.
 \end{Theorem}
 
@@ -60,11 +61,11 @@ mean inequality.
 \subsection*{Arithmetic-Geometric mean inequality}
 
 A well known inequality, often used in problem solving, is an 
-inequality between arithmetic and geometric mean. It is often 
-called AM-GM inequality or simply AG.
+inequality between arithmetic and geometric mean. It states that geometric mean of any nonnegative real numbers is less than or equal to arithmetic mean of these numbers. It is often 
+called AM-GM inequality or simply \emph{AG}.
 
-\begin{Theorem} \emph{AG.}
-For nonegative real numbers $x_1, x_2, \dots x_n$ : 
+\begin{Theorem}[AG]
+For nonegative real numbers $x_1, x_2, \dots x_n$: 
 \[\sqrt[n]{x_1x_2\dots x_n} \le  \frac{x_1 + x_2 + \dots + x_n}{n}\] 
 with equality if and only if $x_1 = x_2 = \dots = x_n$. \\
 \end{Theorem}
@@ -89,10 +90,10 @@ algebraic operations:
 \end{theorem}
 
 \begin{proof} Let's look at each expression on the right-hand side 
-separatelly. We can treat $x^2y$ as product of three numbers 
-$x\cdot x\cdot y$ and using AG we have 
+separately. We can treat $x^2y$ as product of three numbers 
+$x\cdot x\cdot y$ and using \emph{AG} we have 
 \[x^2y = x\cdot x\cdot y = \sqrt[3]{x^3x^3y^3} \le\frac{x^3 + x^3 + y^3}{3}\]
-We get very similar inequalities for $y^2z$ and $z^2x$ - summing 
+We obtain analogical inequalities for $y^2z$ and $z^2x$ - summing 
 those three up we get exactly the inequality we wanted to prove.
 \end{proof}
 
@@ -104,11 +105,13 @@ $x^4 + y^4 + z^4 \ge x^2yz + xy^2z + xyz^2$.
 
 There are some generalizations of AM-GM inequality, first of them uses 
 so called weighted means. 
-\begin{Theorem}\emph{Weighted AG.} 
+\begin{Theorem}[Weighted AG]
 	For nonegative real numbers $x_1, x_2, \dots x_n$ and non-negative real 
-	weights $w_1, w_2, \dots w_n$ where $w = w_1 + w_2 + \dots + w_n > 0$:
+	weights $w_1, w_2, \dots w_n$ where $w = w_1 + w_2 + \dots + w_n > 0$, the following holds:\\
 \[\sqrt[w]{x_1^{w_1}x_2^{w_2}\dots x_n^{w_n}} \le  \frac{w_1x_1 + w_2x_2 + \dots + w_nx_n}{w}\] 
 	with equality if and only if all the $x_k$ with $w_k > 0$ are equal. \\
+	Notice that the original $AG$ inequality is just a special case with all $w_i = 1$.
+
 \end{Theorem}
 
 \begin{theorem}
@@ -124,7 +127,7 @@ so called weighted means.
 	$\frac{1}{2x^2} + \frac{1}{3y^3} + \frac{1}{6z^6} \ge \frac{1}{xyz}$.
 \end{exercise}
 
-Another very powerful generalization arises when looking at other means, 
+\noindent Another very powerful generalization arises when looking at other means, 
 not just arithmetic or geometric. The generalized mean, or power mean, 
 is defined as follows:
 
@@ -135,27 +138,47 @@ integers then power mean with exponent $p$ is
 = \bigg(\dfrac{x_1^p + x_2^p + \dots + x_n^p}{n}\bigg)^\frac{1}{p}\]
 \end{Theorem}
 
-\noindent We can see, that for $M_1$ is arithmetic mean. For $p=0$, 
-the $M_p$ is not defined, however it can be shown that 
+\noindent We can see that for $p = 1$, $M_1$ is arithmetic mean. \\
+For $p=0$, the $M_p$ is not defined, however, it can be shown that 
 \[\lim_{p\to 0} M_p(x_1, x_2, \dots, x_n) = \sqrt[n]{x_1x_2\dots x_n}\]
-The geometric mean is therefor assigned as $M_0$. So far we have discussed 
+The geometric mean is therefore usually assigned to be $M_0$. So far we have discussed 
 $M_0 \le M_1$. So how do other means relate to this?
 
-\begin{Theorem} \emph{Generalized mean inequality.}
+\begin{Theorem}[Generalized mean inequality.]
 For any positive real numbers $x_1, \dots,  x_n$ if $p < q$ then $M_p(x_1, \dots, x_n) < M_q(x_1, \dots, x_n)$.
-
 \end{Theorem}
 
+\noindent As a final note concerning terminology, the $M_{-1}$ is usually called Harmonic mean and $M_2$ quadratic mean.
+
 \section{Problems}
+
 
 \begin{enumerate}
 	\subsection*{Easy}
 	\item{Demonstrate that if $a_1a_2\cdots a_n=1$ then 
 	$a_1+a_2+\cdots +a_n\ge n$.}
 
-	\subsection*{Medium}
+	\item{Demonstrate that $\frac{x}{y} + \frac{y}{z} + \frac{z}{x} \ge 3$  for any positive numbers $x, y, z$.}
+
+	\item{For nonnegative real numbers $x, y$, prove that $2x^3 + y^3 \ge 3x^2y$.}
+	\item{For positive real number $x$, prove that $x^2 + \frac{2}{x} \ge 3$.}
+
+	\item{Show that for positive real numbers $x, y, z$: \\ $x^3(x + 2y) + y^3(y + 2x) \ge 6x^2y^2$.}
+	\subsection*{Medium}	
+	\item{Show that if for real positive numbers $a, b$ we have $a + b = 1$, then also $a^3 + b^3 \ge ab$.}
+
+	\item{For $x, y, z \in \mathbb{R}^{+}$ prove $x^3y + y^3z + z^3x \ge x^2yz + y^2zx + z^2xy$.}
+	
+	\item{Let $x, y, z$ be real positive numbers for which we have \\ $\frac{1}{1 + x} + \frac{1}{1 + y} + \frac{1}{1+z} = 2$. Show that $8xyz \ge 1$.}
 	
 	\subsection*{Difficult}
+	\item{For positive real numbers $a, b, c$, show that $\frac{a^2}{b} + \frac{b^2}{c} + \frac{c^2}{a} \ge a + b + c$.}
+
+	\item{Show that for any positive real numbers $a, b, c$ with $abc = 1$ 	 the following inequality holds: 
+	$\frac{a}{b} + \frac{b}{c} + \frac{c}{a} \ge a + b + c$}
+
+	\item{Let $a, b, c$ be positive real numbers for which $a^2 + b^2 + c^2 = 1$. Prove that \\
+	\[\frac{a}{1-a} + \frac{b}{1 - b} + \frac{c}{1 - c} \ge \frac{3\sqrt{3} + 3}{2}\]}
 
 	\subsection*{Extra}	
 	\item{Prove AG using induction.}
@@ -167,17 +190,28 @@ For any positive real numbers $x_1, \dots,  x_n$ if $p < q$ then $M_p(x_1, \dots
 \begin{thebibliography}{9}
 \bibitem{KMS} Ondrej Budáč, Tomáš Jurík, and Ján Mazák. 
 	\emph{Zbierka úloh KMS}. Trojsten, Bratislava, 2010.
-
+	
+\bibitem{PraSe} Matematický korespondenční seminář. Knihovna. [ONLINE] Available at: \texttt{https://mks.mff.cuni.cz/library/library.php}. [Accessed 10 October 26].
 \end{thebibliography}
 
 \section{Hints}
 \begin{enumerate}
 	\subsection*{Easy}
-
+	\item{Use basic AG.}
+	\item{Use AG directly.}
+	\item{Divide left side into three terms carefully and use basic AG.}
+	\item{Divide left side into three terms carefully and use basic AG.}
+	\item{As the number on the right-hand side suggests, try to divide the left side into 6 terms.}
 	\subsection*{Medium}
+	\item{Factor left side.}
+	\item{Notice similarity with Example 2.}
+	\item{Rewrite so that there are no fractions. Look for convenient terms for which arithmetic or geometric mean is in the inequality that you want to prove.}
 	
 	\subsection*{Difficult}
-
+	\item{What can you say about $\frac{a^2}{b} + b$ ?}
+	\item{Find and sum more AG inequalities conveniently.}
+	\item{ - }
+	
 	\subsection*{Extra}	
 	\item{Use the three step induction. Show that if AG holds for $n$ 
 	numbers then it also holds for $2n$ numbers and then that if it 
@@ -186,6 +220,6 @@ For any positive real numbers $x_1, \dots,  x_n$ if $p < q$ then $M_p(x_1, \dots
 	
 	\item{Use the L'Hôpital's rule.}
 \end{enumerate}
-
 \end{document}
 
+\\https://mks.mff.cuni.cz/library/AGNerovnostLZ/AGNerovnostLZ.pdf
