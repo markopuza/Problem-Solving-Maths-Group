@@ -51,9 +51,8 @@
 	Altitude Rule: $CA^2 = CD \cdot CB$.\\
 	Leg Rule:  $BA^2 = BC \cdot BD$.
 \end{Theorem}
-\begin{Theorem}[Geometric mean theorem]
-	Blah
-\end{Theorem}
+\begin{exercise} Prove \emph{Geometric mean theorem} (both rules).
+\end{exercise}
 
 \subsection*{Cyclic quadrilaterals}
 
