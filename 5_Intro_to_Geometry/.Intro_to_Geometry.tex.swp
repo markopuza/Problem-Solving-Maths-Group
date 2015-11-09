@@ -62,14 +62,26 @@ Lorem ipsum...
 
 
 \begin{enumerate}
-	\subsection*{Easy}
+	\item{We are given triangle $ABC$. Angle bisector of $\angle BCA$} intersect circumcircle of $\triangle ABC$ in point \v{S}. Prove that \v{S} is midpoint of arc $AB$.
 	
-	\subsection*{Medium}	
+	\item{Circles $l$ and $k$ intersect in points $A$, $B$. Choose point $X$ on the circle $k$ and let $Y$ be intersection of $l$ with line $XB$. Show that $\angle AXY$ does not depend on choice of $X$}
+	
+	\item{Given triangle $ABC$, let $H$ be intersection of its altitudes (orthocenter). Prove that reflection of $H$ over line $AB$ lies on the circumcircle of $\triangle ABC$}
+	
+	\item{Let the points of intersection of the altitudes with the sides of the triangle $\triangle ABC$ be $D$, $E$, and $F$. Show that altitudes of $\triangle ABC$ are angle bisectors in $\triangle DEF$.}
+	
+	\subsection*{Medium}
+	\item{Let $ABC$ be a triangle with right angle at $C$ and $M$ be a point on line segment $AB$. Let $S$, $S_1$, and $S_2$ be circumcentres of triangles $ABC$, $ AMC$, $BMC$ Show that $M$, $C$, $S$, $S_1$, and $S_2$ lie on a circle. }
+		
+	\item{Given triangle $ABC$ and a point $D$ on its circumcircle, let $P$, $Q$, $R$ be points closest to $P$ on sides $AB$, $BC$, $CA$. Prove that $P$, $Q$, $R$ colinear.}
+	
+	
 	
 	\subsection*{Difficult}
-
-	\subsection*{Extra}	
-	\item{Blah.}
+	
+	\item{Points $A, B, C, D, E, F$ lie on a circle. Let $AE$ and $BF$ intersect at $P$, $BD$ and $CE$ at $R$, and $AD$ and $CF$ at $S$. Show that $P$, $R$, $S$ are colinear.}
+	
+	\item{Let $O$ be circumcenter of triangle $ABC$. Line through $O$ intersect sides $AB$ and $AC$ in $M$ and $N$. Let $R$, $S$ be midpoints of $CM$, $BN$. Show that $\angle ROS = \angle BAC$}
 
 \end{enumerate}
 
