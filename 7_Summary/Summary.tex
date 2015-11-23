@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+
+\newtheorem{theorem}{Example}
+\newtheorem{problem}{}
+
+\title{\textbf{Everything}}
+\date{Week 10}
+%\author{Miroslav Stankovic\\ Marko Puza\\ Ivan Lau\\}
+\begin{document}
+\maketitle
+
+\section{Invariance Principle}
+
+Property which does not change is called \emph{invariant}, property that only changes in one direction, e.g. always increases, is called \emph{monovariant}. These properties are often used in problems involving different states and transitions between them. 
+
+\begin{problem}
+Blag IP \end{problem}
+
+\begin{problem}
+Blag IP \end{problem}
+
+\begin{problem}
+In an $n \times n$ board the squares are painted black or white. Three of the squares in the corners are white and one is black. Show that there is a $2 \times 2$ square with an odd number of white unit squares.
+ \end{problem}
+
+\section{Extreme Principle}
+
+One of basic problem solving strategies is \emph{Extreme principle}. It uses some extreme property of the problem (e.g. largest element, longest path, or smallest sum) and uses this to construct proof or show contradiction. 
+
+Good indicator that Extreme Principle might be useful is when problem has bounded set of possible values, or there is invariant or monovariant.
+
+\begin{problem}
+Blag EP \end{problem}
+
+\begin{problem}
+All plane sections of a solid are circles. Prove that the solid is a ball.
+\end{problem}
+
+\begin{problem}
+Blag EP \end{problem}
+
+\section{Pigeonhole Principle}
+
+Also known as \emph{Dirichlet's principle}, it comes from the fact, that if you have more than $mn$ pigeons and $n$ holes, there must be a hole with at least $m+1$ pigeons. It is often used to prove existance of some object (with given property).
+
+\begin{problem}
+Blag PP
+\end{problem}
+
+\begin{problem}
+Show, that in a party there are always two persons who have shaken hands with the same number of people.
+\end{problem}
+
+\begin{problem}
+We are given $1985$ positive integers such that none has a prime divisor greater than $23$. Show that there are $4$ of them whose product is the fourth power of an integer.
+\end{problem}
+
+\section{AG-Inequality}
+
+AG states, that for nonegative real numbers $x_1, x_2, \dots x_n$: 
+\[\sqrt[n]{x_1x_2\dots x_n} \le  \frac{x_1 + x_2 + \dots + x_n}{n}\] 
+with equality if and only if $x_1 = x_2 = \dots = x_n$.
+
+It can be used to solve many inequality problems, often summing multiple AGs together.
+
+\begin{problem}
+Prove that for $x\ge 0$: $1 + x \ge 2\sqrt{x}$.
+\end{problem}
+\begin{problem}
+Prove that for $x\ge 0$: $2 + 3x^5 \ge 5x^3$.
+\end{problem}
+\begin{problem}
+Prove that for possitive $a$, $b$, $c$ with $abc = 1$ and $a+b+c \ge a^{-1} + b^{-1} + c^{-1}$ that also $a^n+b^n+c^n \ge a^{-n} + b^{-n} + c^{-n}$ for every possitive integer $n$.
+\end{problem}
+
+\section{Geometry}
+
+One of most useful properties in geometry, is that given points $A$, $B$, $C$ on a circle, angle $\angle ABC$ does not change as $B$ moves along the arc. Consequence of this quality are properties of cyclic quadrilaterals:\\
+- Any side is viewed with same angle from any of the remaining vertices.\\
+- The opposite angles add up to $180^\circ$.\\
+\\One of the methods how to find and make use of cyclic quadraliterals is so-called Power of a point. it states, that for any circle $k$ (centred at $S$ with radius $r$) and point $P$: If line through $P$ intersects $k$ in $A$ and $B$, then $PA \cdot PB$ is always same and equal to $PS^2 - r^2$.
+
+\begin{problem}
+Blag GG
+\end{problem}
+
+\begin{problem}
+Blag GG
+\end{problem}
+
+\begin{problem}
+Blag GG
+\end{problem}
+
+\begin{problem}
+Blag GG
+\end{problem}
+
+\end{document}
