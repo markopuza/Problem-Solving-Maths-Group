@@ -1,0 +1,54 @@
+Ex. 1:
+	circle, sphere or any n-sphere, equation holds.
+Ex. 2:
+	no, the picture depicts case N = (2.5)^2
+Point of these two exercise is to show that the equation
+indeed holds in usual understaning of dimension
+
+Ex. 3:
+	after n iterations there is T_n = 3x4^(n-1) sides
+	each side has length 1/3^n
+	it has infinite length.
+Ex. 4:
+	use T_n (number of sides after n iterations)
+	to construct the expression for the A_n (area after
+	n iterations). Then take it to the limit.
+Ex. 5:
+	Zero volume. Good way to do this is to count the volume
+	of the holes, it will be 1 in the limit.
+	Surface area is infinite.
+	after n iterations, S_n = 2*(20/9)^n + 4*(8/9)^n
+	!! Calculating the surface area is quite hard, maybe you can
+	skip it. !!
+	Dimension: log(20) / log(3)
+Ex. 6:
+	Surface area is sqrt(3) (when the side of the original tetrahedron is 1)
+	Volume is 0.
+	Dimension is 2.
+Pr. 1:
+	There is a bijection between ternary digits (0,2) and numbers in binary
+	representation using digits (0,1)
+	-> for example 0.0220  <->  0.0110
+Ex. 7:
+	Should look something like this:
+	A
+	AB
+	ABA
+	ABAAB
+	When you join the parents with its children, the picture is self-similar
+	when rooted in arbitrary A
+Ex. 8:
+	[-2,0.25]
+Pr. 2:
+	(possibly infinite) intersection of closed sets is closed
+	polynomial functions are closed.
+	write M = {c where |c| <= 2} *intersects* {c where |c^2 + c| <= 2} *intersects* {c where |(c^2 + c)^2 + c| <= 2} ...
+
+Ex. 9:
+	for seed z_0 = 0, c is in M precisely when it will not diverge, by definition.
+	thus the Julia set J_c will be connected
+Ex. 10:
+	This is precisely ex. 8 (to check the understaning). Thus [-2, 0.25]
+Ex. 11:
+	Just show it :)
+	
