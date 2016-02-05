@@ -7,7 +7,7 @@
 \usepackage{amsfonts}
 \usepackage[margin=0.47in]{geometry}
 
-\newtheorem{theorem}{}
+\newtheorem{theorem}{Theorem}
 \newtheorem{definition}{Definition}
 \newtheorem{exercise}{Exercise}
 \newtheorem{problem}{Problem}
@@ -24,7 +24,7 @@
 
 \title{\textbf{Sets and Infinity}}
 \date{Week 3}
-%\author{Miroslav Stankovic\\ Marko Puza}
+\author{Miroslav Stankovic}
 \begin{document}
 \maketitle
 
@@ -33,13 +33,13 @@
 
 \section{Naive Set Theory}
 
-The idea of infinity have always been part of mathematics and philosophy. It has been part of fameous Zeno's paradoxes, infinite lines in geometry, or basis of analysis in the times of Leibnitz and Newton. However, until late 18th century, the infinity was viewed as something indefinite - as a limit, towards which a variable goes.
+The idea of infinity has always been part of mathematics and philosophy. It has played a huge role in famous Zeno's paradoxes, infinite lines in geometry, or basis of analysis in the times of Leibnitz and Newton. However, until late 18th century, the infinity was viewed as something indefinite - as a limit, towards which a variable goes.
 
 \begin{definition}
 By a \emph{set} we understand any collection into a whole $M$ of definite and separate objects $m$ of our intuition or our thought. These objects are called the \emph{elements} of $M$.
 \end{definition}
 
-\noindent The definition above was used by Georg Cantor to establish the foundations of set theory, which allowed, for the first time, to directly work with infinity. As you may notice, the Cantor's definition lack the precision and rigour we are used to. In 1901, Bertrand Russel came up with a paradox in the Cantor's set theory. It goes like this: $S=\{x|x\notin x\}$.
+\noindent The definition above was used by George Cantor to establish the foundations of set theory which allowed, for the first time, to directly work with infinity. As you may notice, the Cantor's definition lack the precision and rigour we are used to. In 1901, Bertrand Russel came up with a paradox in the Cantor's set theory. It goes like this: $S=\{x|x\notin x\}$.
 
 \begin{exercise} What is the Russel's paradox about?
 \end{exercise}
@@ -60,10 +60,10 @@ By a \emph{set} we understand any collection into a whole $M$ of definite and se
 
 \subsection*{Comparing infinities}
 
-\noindent So how to compare two infinite sets? We can try to pair the elements, and if we are successful the sets are same size; if some elements are left umpired in a set, that set is bigger. Based on this idea we use following definition:
+\noindent So how to compare two infinite sets? We can try to pair the elements, and if we are successful, the sets are of the same size; if some elements are left unpaired in a set, that set is 'bigger'. Based on this idea we use following definition:
 
-\begin{definition}
-$A\preceq B$ if there is an injective function from $A$ to $B$;
+\begin{definition}\ \\
+\indent $A\preceq B$ if there is an injective function from $A$ to $B$;
 
 $A\approx B$ if there is a bijection from $A$ to $B$; 
 
@@ -102,7 +102,7 @@ $A\prec B$ if $A\preceq B$ and $A\not\approx B$.
 Show that $\mathbb{N} \approx \mathbb{N} \times \mathbb{N}$.
 \end{exercise}
 
-\noindent So even if cartesian product creates, in some sense, much bigger set, it is still the same countable infinity. In fact, $A\approx A\times A$ for any infinite set $A$. As a consequence, $A\approx A^n$ for any $n\in \mathbb{N}$. Another way how to create 'bigger' sets is using union - and since today it is all about infinity, let it be infinite union!
+\noindent So even if cartesian product creates, in some sense, much bigger set, it is still the same countable infinity. In fact, $A\approx A\times A$ for any infinite set $A$. As a consequence, $A\approx A^n$ for any $n\in \mathbb{N}$. Another way how to create 'bigger' sets is using union - and since today it is all about infinity, let it be an infinite union!
 \begin{theorem}
 Countable union of countable sets is countable.
 \end{theorem}
@@ -132,6 +132,22 @@ $\begin{array} {*{4}c} {a_{00}} & {a_{01}} & {a_{02}} & \cdots \\ {a_{10}} & {a_
   \item Can we color all squares in infinite square grid with two colors (green and blue) such that every column contains finitly many green squares, and every row finitely many blue squares?
 \end{enumerate}
 
+\section{Cantor's theorem}
+
+The natural question that one may ask is how many infinites are actually there? This is something that many find controversial and there is great amount of disagreement about this - resulting in numerous set theories. 
+Let us look at Cantor's theorem which provides an answer for this - there is (of course) infinitely many infinities.
+
+\begin{theorem}[Cantor's theorem]
+For any set $A$, $A\prec \mathbb{P}(A)$, where $\mathbb{P}(A)$ denotes a \emph{power set} of $A$ - the set of all subsets of $A$.
+\end{theorem}
+
+\begin{problem}
+Prove the Cantor's theorem by showing that no function \\ $f: A \rightarrow \mathbb{P}(A)$ can be surjective. \\
+For the purpose, try to use \emph{Cantor's diagonal set of $f$}: \[B = \{{x \in A : x \notin f(x)}\}\]
+\end{problem}
+
+\noindent A direct consequence of the above theorem is what's called Cantor's paradox - it states that there is no greatest size of the infinite set. This can be rephrased into a very surprising result: There is no set containing all sets (so-called \emph{universal set})!
+
 \section{Axiom of choice}
 
 \noindent Informally put, the axiom of choice, or simply AC, says that given any collection of bins, each containing at least one object, it is possible to make a selection of exactly one object from each bin.
@@ -146,13 +162,16 @@ $\begin{array} {*{4}c} {a_{00}} & {a_{01}} & {a_{02}} & \cdots \\ {a_{10}} & {a_
 \noindent Axiom of choice, or simply AC, is one of most controversial axioms in mathematics. Although it seems perfectly obvious, it allows us to do some really weird stuff. With AC, it is possible to decompose a ball into a finite number of point sets and reassemble it into two balls identical to the original (Banach–Tarski paradox). 
 
 \begin{problem}
-In a room, there is countably many envelopes, each containing a real number. One by one, 100 set theorists visit the room and each can open countably many of the envelopes. Then he or she have to pick an unopened envelope and guess what number is inside (after each visit, envelopes are returned to the original state). Can we guarantee that at least one of them guesses right? What about 99 correct guesses?
+In a room, there is countably many envelopes, each containing a real number. One by one, 100 set theorists visit the room and each can open countably many of the envelopes. Then he or she has to pick an unopened envelope and guess what number is inside (after each visit, envelopes are returned to the original state). Can we guarantee that at least one of them guesses right? What about 99 correct guesses?
 \end{problem}
 
 
+\begin{thebibliography}{9}
+\bibitem{PraSe} Matematický korespondenční seminář. Knihovna. [ONLINE] Available at: \texttt{https://mks.mff.cuni.cz/library/library.php}. [Accessed February 4 2016].
+\end{thebibliography}
 \end{document}
+
 \\https://mks.mff.cuni.cz/common/show.php?title=Nekone%26%23269%3Bn%26eacute%3B+mno%26%23382%3Biny&file=library/NekonecneMnozinyDS/NekonecneMnozinyDS
 \\https://mks.mff.cuni.cz/common/show.php?title=Teorie+mno%26%23382%3Bin&file=library/TeorieMnozinPPo/TeorieMnozinPPo
 \\https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument
-\\https://mks.mff.cuni.cz/library/AGNerovnostLZ/AGNerovnostLZ.pdf
 \\https://en.wikipedia.org/wiki/Axiom_of_choice
