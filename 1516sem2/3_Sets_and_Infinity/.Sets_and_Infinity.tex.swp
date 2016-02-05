@@ -112,7 +112,17 @@ $\begin{array} {*{4}c} {a_{00}} & {a_{01}} & {a_{02}} & \cdots \\ {a_{10}} & {a_
 \end{problem}
 \begin{problem} Show that set of all finite subsets of $\mathbb{N}$ is countable.
 \end{problem}
+\begin{problem} Show that set of all finite subsets of $\mathbb{N}$ is countable.
+\end{problem}
 
+\noindent So far we have looked at the sets as some abstract structures. However, we can represent $\mathbb{R}$ simply as a line, $\mathbb{R}\times\mathbb{R}$ as a plane, infinite square grid as a $\mathbb{N}\times\mathbb{N}$, and so on. In the following examples, try to use intuitive, geometrical approach.
+\begin{enumerate}
+  \item Show that $(0,\pi)\approx\mathbb{R}$
+  \item Show that 'unit square' $\approx\mathbb{R}^2$.
+  \item How many lines do we need to cover a plane?
+  \item Can we color all squares in infinite square grid with two colors (green and blue) such that every column contains finitly many green squares, and every row finitely many blue squares?
+  
+\end{enumerate}
 
 \end{document}
 \\https://mks.mff.cuni.cz/common/show.php?title=Nekone%26%23269%3Bn%26eacute%3B+mno%26%23382%3Biny&file=library/NekonecneMnozinyDS/NekonecneMnozinyDS
