@@ -13,6 +13,15 @@
 \newtheorem{problem}{Problem}
 \newtheorem*{corollary}{Corollary}
 
+\makeatletter
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
 \title{\textbf{Sets and Infinity}}
 \date{Week 3}
 %\author{Miroslav Stankovic\\ Marko Puza}
@@ -112,6 +121,33 @@ $\begin{array} {*{4}c} {a_{00}} & {a_{01}} & {a_{02}} & \cdots \\ {a_{10}} & {a_
 \end{problem}
 \begin{problem} Show that set of all finite subsets of $\mathbb{N}$ is countable.
 \end{problem}
+\begin{problem} Show that set of all finite subsets of $\mathbb{N}$ is countable.
+\end{problem}
+
+\noindent So far we have looked at the sets as some abstract structures. However, we can represent $\mathbb{R}$ simply as a line, $\mathbb{R}\times\mathbb{R}$ as a plane, infinite square grid as a $\mathbb{N}\times\mathbb{N}$, and so on. In the following examples, try to use intuitive, geometrical approach.
+\begin{enumerate}
+  \item Show that $(0,\pi)\approx\mathbb{R}$
+  \item Show that 'unit square' $\approx\mathbb{R}^2$.
+  \item How many lines do we need to cover a plane?
+  \item Can we color all squares in infinite square grid with two colors (green and blue) such that every column contains finitly many green squares, and every row finitely many blue squares?
+\end{enumerate}
+
+\section{Axiom of choice}
+
+\noindent Informally put, the axiom of choice, or simply AC, says that given any collection of bins, each containing at least one object, it is possible to make a selection of exactly one object from each bin.
+
+\noindent More formaly: For any set X of nonempty sets, there exists a choice function f defined on X.
+\\
+
+\begin{chapquote}{Bertrand Russell, \textit{Introduction to mathematical philosophy}}
+\noindent The Axiom of Choice is necessary to select a set from an infinite number of pairs of socks, but not an infinite number of pairs of shoes.
+\end{chapquote}	
+
+\noindent Axiom of choice, or simply AC, is one of most controversial axioms in mathematics. Although it seems perfectly obvious, it allows us to do some really weird stuff. With AC, it is possible to decompose a ball into a finite number of point sets and reassemble it into two balls identical to the original (Banach–Tarski paradox). 
+
+\begin{problem}
+In a room, there is countably many envelopes, each containing a real number. One by one, 100 set theorists visit the room and each can open countably many of the envelopes. Then he or she have to pick an unopened envelope and guess what number is inside (after each visit, envelopes are returned to the original state). Can we guarantee that at least one of them guesses right? What about 99 correct guesses?
+\end{problem}
 
 
 \end{document}
@@ -119,3 +155,4 @@ $\begin{array} {*{4}c} {a_{00}} & {a_{01}} & {a_{02}} & \cdots \\ {a_{10}} & {a_
 \\https://mks.mff.cuni.cz/common/show.php?title=Teorie+mno%26%23382%3Bin&file=library/TeorieMnozinPPo/TeorieMnozinPPo
 \\https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument
 \\https://mks.mff.cuni.cz/library/AGNerovnostLZ/AGNerovnostLZ.pdf
+\\https://en.wikipedia.org/wiki/Axiom_of_choice
