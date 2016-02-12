@@ -23,12 +23,10 @@
 \makeatother
 
 \title{\textbf{Sets and Infinity}}
-\date{Week 3}
-%\author{Miroslav Stankovic\\ Marko Puza}
+\date{Weeks 3 \& 4}
+\author{Miroslav Stankovic\\}
 \begin{document}
 \maketitle
-
-
 
 
 \section{Naive Set Theory}
@@ -41,7 +39,8 @@ By a \emph{set} we understand any collection into a whole $M$ of definite and se
 
 \noindent The definition above was used by Georg Cantor to establish the foundations of set theory, which allowed, for the first time, to directly work with infinity. As you may notice, the Cantor's definition lack the precision and rigour we are used to. In 1901, Bertrand Russel came up with a paradox in the Cantor's set theory. It goes like this: $S=\{x|x\notin x\}$.
 
-\begin{exercise} What is the Russel's paradox about?
+\begin{exercise} 
+What is the Russel's paradox about?
 \end{exercise}
 
 \noindent Cantor's set theory was later 'fixed' using mathematical logic and rigorous axiomatic approach to study sets. For the time being, the naive set theory will be sufficient to demonstrate basic concepts in infinities.
@@ -51,11 +50,17 @@ By a \emph{set} we understand any collection into a whole $M$ of definite and se
 \noindent In set theory, Cantor's diagonal argument was published in 1891 as a mathematical proof that there are infinite sets which cannot be put into one-to-one correspondence with the infinite set of natural numbers. Such sets are now known as uncountable sets, and the size of infinite sets is now treated by the theory of cardinal numbers which Cantor began. 
 
 \includegraphics[scale=0.8]{cda}
-\begin{exercise} Let $S=\{x|x\subset \mathbb{N}\}$. Show that there is no bijection from $\mathbb{N}$ to $S$.
+
+\begin{exercise}
+Let $S=\{x|x\subset \mathbb{N}\}$. Show that there is no bijection from $\mathbb{N}$ to $S$.
 \end{exercise}
-\begin{corollary} There are infinities of different sizes.
+
+\begin{corollary} 
+There are infinities of different sizes.
 \end{corollary}
-\begin{problem} Can Cantor's diagonal argument be used to prove existence of sets bigger than $\mathbb{R}$?
+
+\begin{problem} 
+Can Cantor's diagonal argument be used to prove existence of sets bigger than $\mathbb{R}$?
 \end{problem}
 
 \subsection*{Comparing infinities}
@@ -82,10 +87,12 @@ $A\prec B$ if $A\preceq B$ and $A\not\approx B$.
 
 \noindent You might be surprised, that following (very plausible) property is missing: $A\preceq B$ and $B\preceq A$ then $A\approx B$. Even though it is true, it is not at all obvious! This theorem is known as Cantor-Bernstein theorem.
 
-\begin{problem} Prove the Cantor-Bernstein theorem.
+\begin{problem} 
+Prove the Cantor-Bernstein theorem.
 \end{problem}
 
-\begin{exercise} Show that $(0,1)\approx\mathbb{R}$.
+\begin{exercise} 
+Show that $(0,1)\approx\mathbb{R}$.
 \end{exercise}
 
 \subsection*{Finite vs. infinite}
@@ -103,10 +110,13 @@ Show that $\mathbb{N} \approx \mathbb{N} \times \mathbb{N}$.
 \end{exercise}
 
 \noindent So even if cartesian product creates, in some sense, much bigger set, it is still the same countable infinity. In fact, $A\approx A\times A$ for any infinite set $A$. As a consequence, $A\approx A^n$ for any $n\in \mathbb{N}$. Another way how to create 'bigger' sets is using union - and since today it is all about infinity, let it be infinite union!
+
 \begin{theorem}
 Countable union of countable sets is countable.
 \end{theorem}
-\begin{proof} Consider the countable sets $S_0, S_1, S_2, \ldots$ where $\displaystyle S = \bigcup_{i \mathop \in \mathbb{N}} {S_i}$. Now we write the elements of $S_0, S_1, S_2, \ldots$ in the form of a table:
+
+\begin{proof} 
+Consider the countable sets $S_0, S_1, S_2, \ldots$ where $\displaystyle S = \bigcup_{i \mathop \in \mathbb{N}} {S_i}$. Now we write the elements of $S_0, S_1, S_2, \ldots$ in the form of a table:
 
 $\begin{array} {*{4}c} {a_{00}} & {a_{01}} & {a_{02}} & \cdots \\ {a_{10}} & {a_{11}} & {a_{12}} & \cdots \\ {a_{20}} & {a_{21}} & {a_{22}} & \cdots \\ \vdots & \vdots & \vdots & \ddots \\ \end{array}$
 
@@ -115,16 +125,25 @@ $\begin{array} {*{4}c} {a_{00}} & {a_{01}} & {a_{02}} & \cdots \\ {a_{10}} & {a_
 
 \begin{exercise} Using Cantor-Bernstein theorem, show that $\mathbb{Q}\approx\mathbb{N}$. 
 \end{exercise}
-\begin{problem} Show that $\mathbb{R} \approx \mathbb{N} \times \mathbb{R}$.
+
+\begin{problem} 
+Show that $\mathbb{R} \approx \mathbb{N} \times \mathbb{R}$.
 \end{problem}
-\begin{problem} Show that $\mathbb{R} \approx \mathbb{R} \times \mathbb{R}$.
+
+\begin{problem} 
+Show that $\mathbb{R} \approx \mathbb{R} \times \mathbb{R}$.
 \end{problem}
-\begin{problem} Show that set of all finite subsets of $\mathbb{N}$ is countable.
+
+\begin{problem} 
+Show that set of all finite subsets of $\mathbb{N}$ is countable.
 \end{problem}
-\begin{problem} Show that set of all finite subsets of $\mathbb{N}$ is countable.
+
+\begin{problem} 
+Show that set of all finite subsets of $\mathbb{N}$ is countable.
 \end{problem}
 
 \noindent So far we have looked at the sets as some abstract structures. However, we can represent $\mathbb{R}$ simply as a line, $\mathbb{R}\times\mathbb{R}$ as a plane, infinite square grid as a $\mathbb{N}\times\mathbb{N}$, and so on. In the following examples, try to use intuitive, geometrical approach.
+
 \begin{enumerate}
   \item Show that $(0,\pi)\approx\mathbb{R}$
   \item Show that 'unit square' $\approx\mathbb{R}^2$.
@@ -147,6 +166,7 @@ Every non-empty set $x$ contains a member $y$ such that $x$ and $y$ are disjoint
 \begin{exercise}
 Show that Axiom of regularity get rid of Russel's paradox.
 \end{exercise}
+
 	\item \emph{Axiom schema of specification}:
 Essentially, it says that any definable subclass of a set is a set, i.e. for any $X$ and parameter $p$, there is a set $\{x \in X : \phi(x,p)\}$.
 \[\forall z \forall p \exists y \forall x [x \in y \Leftrightarrow ( x \in z \land \phi(x,p) )]\]
@@ -172,7 +192,6 @@ The Axiom of Power Set states that for any set $x$, there is a set $y$ that cont
 	
 \end{enumerate}
 
-
 \section{Axiom of choice}
 
 \noindent ZF is often extended by adding one extra axiom - the Axiom of Choice - to form so called ZFC system. Informally put, the axiom of choice, or simply AC, says that given any collection of bins, each containing at least one object, it is possible to make a selection of exactly one object from each bin.
@@ -188,9 +207,11 @@ The Axiom of Power Set states that for any set $x$, there is a set $y$ that cont
 
 \noindent There are several statements equivalent to the AC. \\
 
-\noindent \emph{Zorn's lemma}: Suppose a partially ordered set P has the property that every chain (i.e. totally ordered subset) has an upper bound in P. Then the set P contains at least one maximal element.\\
+\noindent \emph{Zorn's lemma}: 
+Suppose a partially ordered set P has the property that every chain (i.e. totally ordered subset) has an upper bound in P. Then the set P contains at least one maximal element.\\
 
-\noindent \emph{Well-ordering theorem}: The well-ordering theorem states that every set can be well-ordered.\\
+\noindent \emph{Well-ordering theorem}: 
+The well-ordering theorem states that every set can be well-ordered.\\
 
 \begin{chapquote}{Jerry Bona}
 \noindent The Axiom of Choice is obviously true, the well-ordering principle obviously false, and who can tell about Zorn's lemma?
@@ -200,13 +221,14 @@ The Axiom of Power Set states that for any set $x$, there is a set $y$ that cont
 \begin{problem}
 150 logicians (labeled 1 through 100) were captured by an evil philosopher. He gives them some time to prepare a strategy and then let them stand in a row - so that everyone only sees people with higher number. Then they are all given a blue or a green hat (they do not know what color they got). Starting from \#1, each have to guess the color of their hat. Only those who guess correctly survive.
 \begin{enumerate}
-\item What strategy should they use, to make sure at least 75 of them survive?
-\item How about at least 100?
-\item Or 149?
-\item How to make sure that at most one survive?
-\item What if C different colors are used?
+	\item What strategy should they use, to make sure at least 75 of them survive?
+	\item How about at least 100?
+	\item Or 149?
+	\item How to make sure that at most one survive?
+	\item What if C different colors are used?
 \end{enumerate}
 \end{problem}
+
 \begin{problem}
 This time, the evil philosopher captured countably many set theorists. Again, they have time to decide on a strategy and then they will go through the same process as logicians in the last problem. How can they make sure, that only finitely many of them do not survive?
 \end{problem}
@@ -215,9 +237,8 @@ This time, the evil philosopher captured countably many set theorists. Again, th
 In a room, there is countably many envelopes, each containing a real number. One by one, 100 set theorists visit the room and each can open countably many of the envelopes. Then he or she have to pick an unopened envelope and guess what number is inside (after each visit, envelopes are returned to the original state). Can we guarantee that at least one of them guesses right? What about 99 correct guesses?
 \end{problem}
 
-
-
 \end{document}
+
 \\https://mks.mff.cuni.cz/common/show.php?title=Nekone%26%23269%3Bn%26eacute%3B+mno%26%23382%3Biny&file=library/NekonecneMnozinyDS/NekonecneMnozinyDS
 \\https://mks.mff.cuni.cz/common/show.php?title=Teorie+mno%26%23382%3Bin&file=library/TeorieMnozinPPo/TeorieMnozinPPo
 \\https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument
