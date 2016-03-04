@@ -25,7 +25,7 @@
 
 \title{\textbf{Combinatorics}}
 \date{Week 6}
-\author{Ivan Lau\\}
+\author{Ivan Lau\\Marko Puza}
 \begin{document}
 \maketitle
 
@@ -78,7 +78,7 @@ How many ways can $8$ people sit in a line if Alice and Bob are not adjacent? \\
 
 \noindent Different approach, same answer. Interesting huh. Indeed this is the fun part of combinatorics or perhaps mathematics. Even though beauty is in the eye of beholder, some approaches are objectively more elegant than the other approaches. Let's now dive in into problems and try to come out with as many approaches as you can and compare it with what your friends got!
 
-\subsection*{Problems}
+\subsection*{Problems I}
 
 \begin{problem}
 Prove that ${n \choose r} = {n \choose n - r}$.
@@ -133,17 +133,134 @@ Show that ${n+1 \choose 2}^2 = (\sum_{i=1}^n i^3) = 6{n+1 \choose 4} + 6{n+1 \ch
 \end{problem}
 
 \begin{problem}
-See that number of parallelograms in a triangular grid of size $n$ is $3{n \choose 4}$.
-\end{problem}
-\includegraphics[scale=0.8]{triangle}
-
-\begin{problem}
 Let $a_1 + a_2 + \dots + a_n = s$ with all $a_i$ and $s$ being natural numbers. Show that the sum of all possible $a_1 \cdot a_2 \cdots a_n = {s + n - 1 \choose 2n - 1}$
 \end{problem}
 
 \begin{problem}
 Show that $\sum_{k=0}^n {2k \choose k}{2(n-k)\choose n-k} = 2^{2n}$.
 \end{problem}
+
+\break
+\subsection*{Partitions, Fibonacci, Catalan}
+
+Some of us may have heard of Fibonacci or Catalan numbers, but probably only a few gave thought about their combinatorial meaning. And their combinatorial meaning is indeed very neat. But before proceeding further, let's start with a warm-up problem:
+
+\begin{problem}
+See that number of parallelograms in a triangular grid of size $n$ is $3{n + 2 \choose 4}$.
+\end{problem}
+\centerline{\includegraphics[scale=0.8]{triangle}}
+
+\begin{definition}[Partitions]
+By partition of number $n$ of length $k \ge 1$ we will understand finite \textbf{non-increasing} sequence $a_1, a_2, \dots, a_k$ satisfying \\ $n = \sum^k_{i=1} a_i$.
+\end{definition}
+
+
+\begin{definition}[Fibonacci numbers]
+We will denote $F_n$ to be $n$-th Fibonacci number, which is the number of ways to fill table of size $(n-1) \times 1$ by tiles of size $1 \times 1$ and $2 \times 1$.
+\end{definition}
+
+\begin{definition}[Catalan numbers]
+By $n$-th Catalan number $C_n$ we will understand number of paths going from bottom-left corner of $n \times n$ grid to its top-right corner, which are completely \textbf{below} the corresponding diagonal.
+\end{definition}
+
+\centerline{\includegraphics[scale=0.5]{catalan}}
+
+\break
+
+\subsection*{Problems II}
+
+\begin{problem}
+Show that the number of partitions of number $n$ is equal to the number of partitions of number $2n$ of length $n$.
+\end{problem}
+
+\begin{problem}
+Show that the number of partitions of number $n$ where all $a_i$ are distinct is equal to the number of partitions of number $n$ where all $a_i$ are odd.
+\end{problem}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{problem}
+Convince yourself that in the previous page there is \textbf{indeed} a definition of Fibonacci numbers that corresponds to the well known sequence $0,1,1,2,3,5,8...$ defined by recurrence $F_n = F_{n-1} + F_{n-2}$.
+\end{problem}
+
+\begin{problem}
+See that the number of ways to fill a table $(n-1) \times 2$ by tiles of size $2 \times 1$ is $F_n$.
+\end{problem}
+
+\begin{problem}
+See that \[F_{a+b+1} = F_{a+1}F_{b+1} + F_{a}F_{b}\]
+\end{problem}
+
+\begin{problem}
+See that number of ways to fill a table $n \times 1$ by odd-sized tiles is $F_n$.
+\end{problem}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{problem}
+Convince yourself that $C_n$ is the number of necklaces consisting of $n$ white and $n+1$ black beads (necklaces differing only in rotation are \textbf{same}, necklaces differing in reflection are \textbf{different}). \\
+Use this to show \[C_n = {\frac{1}{n+1}} {{2n}\choose{n}}\]
+\end{problem}
+
+\begin{problem}
+See directly from the definition that $C_n$ is number of \emph{Dyck words} of length $2n$. A Dyck word is a string consisting of $n$ X's and $n$ Y's, where \textbf{no} prefix of a word contains more Y's than X's\footnote{E.g: XXXYYY, XYXXYY or XYXYXY}.
+\end{problem}
+
+\begin{problem}
+See that $C_n$ is number of expressions consisting of $n$ pairs of well-matched parantheses\footnote{(()) or ()() are well-matched, ())( is not}.
+\end{problem}
+
+\begin{problem}
+Show that the number of ways how to build a `pyramid` of coins with the bottom row consisting of $n$ coins (see picture) is $C_n$.
+\centerline{\includegraphics[scale=0.44]{pyramids}} 
+\end{problem}
+
+\begin{problem}
+See that number of rooted binary trees with $n$ vertices where we discern left and right children is $C_n$. \\
+\centerline{\includegraphics[scale=0.44]{trees}} 
+\end{problem}
+
+\begin{problem}
+Based on previous problem, show that number of ways to divide regular $(n+2)$-gon into $n$ triangles is $C_n$.	
+\end{problem}
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\begin{thebibliography}{9}
+\bibitem{iKS} Mirek Olšák. 
+	\emph{Combinatorial (non)counting, iKS}. \\http://iksko.org/files/sbornik2.pdf  (Czech).
+\end{thebibliography}
+Tremendous credit goes to Mirek for his beautifully written and ingenious text.
+
+\break 
+
+\subsection*{Hints for Part II}
+\textbf{16.} \\
+\centerline{\includegraphics[scale=0.5]{hint16}} \\
+
+\noindent\textbf{17.} In a partition of length $n$, decrease every summand by $1$. \\
+
+\noindent\textbf{18.} $1 + 1 + 1 + 1 + 1 + 3 + 3 + 3 = 1 + 4 + 3 + 6$ \\
+
+\noindent\textbf{21.} \\
+\centerline{\includegraphics[scale=0.44]{hint21}} \\
+
+\noindent\textbf{22.} \\
+\centerline{\includegraphics[scale=0.44]{hint22}} \\
+
+\noindent\textbf{23.} Black := up, white := down. There is exactly one rotation of necklace such that we are holding it by some black bead and the path given by the rest of the necklace goes completely below the diagonal.
+
+\noindent\textbf{26.} \\
+\centerline{\includegraphics[scale=0.4]{hint26}} \\
+
+\break
+
+\noindent\textbf{27.} \\
+\centerline{\includegraphics[scale=0.4]{hint27}} \\
+
+\noindent\textbf{28.} \\
+\centerline{\includegraphics[scale=0.4]{hint28}} \\
+
 
 \end{document}
 
