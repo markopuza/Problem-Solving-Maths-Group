@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\graphicspath{ {/home/marko/Problem solving maths group} }
+\newtheorem{theorem}{Example}
+
+\title{\textbf{Extreme principle}}
+\date{Week 1}
+\author{Miroslav Stankovic\\ Marko Puza}
+\begin{document}
+\maketitle
+
+\section{Theory}
+
+The \emph{Extreme principle}\footnote{https://brilliant.org/wiki/extremal-principle/} is a methodology, a useful problem solving tactics, that focuses on finding a solution with some extreme property among all possible candidates. Very often, this means finding the smallest or largest value. Afterwards, the extreme solution is used to construct a proof while making use of the simplified conditions that it provides.
+
+
+\section{Examples}
+
+\begin{theorem}
+There are $n$ points given on a plane. \textbf{Each} three of them determine a triangle whose area is at most $1$. Show, that all points lie inside a triangle whose area is at most $4$.  
+\end{theorem}
+
+\begin{proof}
+From among all triples of points, let $(A, B, C)$ be the triple that determines triangle with the largest area. Now consider line $l_{A}$ parallel to $BC$.
+\end{proof}
+
+
+\section{Problems}
+
+\begin{enumerate}
+	\item{There are $n$ points on a plane. No line passes through exactly two of those points. Prove that all $n$ points lie on a line.}
+\end{enumerate}
+
+\end{document}
+
+
+
