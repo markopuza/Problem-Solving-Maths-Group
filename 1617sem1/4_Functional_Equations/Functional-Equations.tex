@@ -1,0 +1,112 @@
+\documentclass[11pt,a5paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage[margin=0.47in]{geometry}
+\usepackage{graphicx}
+
+
+\newtheorem{theorem}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem*{Theorem}{Theorem}
+
+\title{\textbf{Functional Equations}}
+\date{Week 4}
+\author{Jonas Wolter}
+
+\begin{document}
+\maketitle
+
+\section{Theory}
+Functional Equations appear occasionally in mathematical competetions especially if one reaches further stages of those. The bad news about this: Those functional equations are completely different from what one is usually dealing with in University. But the good news is: They are much more fun :-).\\
+\noindent The most straightforward strategy solving functional equations is just by plugging in reasonable values for the variables and try to deduce information about the function(s) one is looking for. It is very hard to explain how one can come up with those values. It is mainly a \emph{try - and - error - procedure} which relies a lot on experience solving problems. A few ideas which are usually usefull to try
+\[x=0, x=1, y=x, y=-x, x=\frac{1}{y}, x=f(y), x=\frac{1}{f(y)}\]
+ but it really depends on the problem. Hence we should start looking at some of the problems \textbf{1. - 4.}  now. A last hint before rushing away: If you can guess a solution it might help to think of what is special about this solution and what other solutions also have to satisfy.\\
+
+\noindent Usually it is not enough to plug in values especially if problems become more complicated. Two useful strategies to tackle at least parts of functional equations are induction and changes of domains of the functions. The latter means that one starts proving something over the naturals and extends this result afterwards to other domains where one tries to use that one already knows some solutions. In this part also continuity of a function might play an important role. If continuity is not given it is sometimes useful just to assume it and try to fix it afterwards. Induction can be used in the sense that it is sometimes possible to find solutions for small values of $x$ and inductions helps to find solutions for bigger $x$. \\
+Finally I want to mention two famous functional equations that appear often as parts of other problems and it is very useful to have the solutions for this in mind. 
+\begin{enumerate}
+\item{$f(x+y)=f(x)+f(y)$}
+\item{$f(x+y) = f(x)f(y)$}
+\end{enumerate}
+These are two of the four \emph{Cauchy functionl equations} . Try to find the solutions for these and then continue with the exercises bearing in mind the three equations above. Certainly one will not always see these functional equations immediately and hence it is sometimes useful to introduce a change of variables.
+
+\section{Problems}
+
+\begin{enumerate}
+
+\item{Consider the functions  $f: \mathbb{Z} \to \mathbb{Z}$ such that 
+\[f(x)=f(x^2+x+1)\]
+for all $x \in \mathbb{Z}$. Find (a) all even functions, (b) all odd functions.}
+
+\item{Find all tame functions $f: \mathbb{R} \to \mathbb{R}$  such that
+\[f(x+y)+f(x-y)=2f(y)\]
+for all $x,y \in \mathbb{R}$.}
+
+\item{Let $f: \mathbb{Z} \to \mathbb{Z}$ be a function such that, for all integers $x$ and $y$, the following holds:
+\[f(f(x)-y)=f(y)-f(f(x)).\]
+Show that $f$ is bounded for all integers $x$ and $y$.}
+
+\item{Find all solutions $f: \mathbb{R} \to \mathbb{R}$  such that
+\[f\left(\frac{x+y}{2}\right)=\frac{f(x)+f(y)}{2}\]
+for all $x,y \in \mathbb{R}$. This is known as \emph{Jensen's functional Equality} and sometimes mentioned as \emph{Jensen's Inequality}  if it is not satisfied. How does this inequality look like? } 
+
+\item{Find all functions $f: \mathbb{R} \to \mathbb{R}$  such that
+\[f(f(y))+f(x-y)=f(xf(y)-x)\]
+for all $x,y \in \mathbb{R}$.}
+
+\item{Find all continuous solutions of 
+\[f(x+y)=g(x)+h(y).\]}
+
+\item{Find all functions $f: \mathbb{R} \to \mathbb{R}$ such that
+\[f(xf(y)+y)+f(-f(x))=f(yf(x)-y)+y\]
+for all $x,y \in \mathbb{R}$.}
+
+\item{Find all tame solutions of
+\[f(x+y)=\frac{f(x)f(y)}{f(x)+f(y)}.\]}
+
+\item{Find all functions $f: \mathbb{Z^+} \to \mathbb{Z^+}$ such that
+\[f(x,x)=x,\]
+\[f(x,y)=f(y,x),\]
+\[(x+y)f(x,y)=yf(x,x+y)\]
+for all $x,y \in \mathbb{Z^+}$.}
+
+
+\item{Determine all functions  $f: \mathbb{R} \to \mathbb{R}$ different from the zero function,  such that
+\[f(x)f(y)=f(x-y)\]
+for all $x,y \in \mathbb{R}$.}
+
+\item{Find all tame functions $f: \mathbb{R} \to \mathbb{R}$  such that
+\[f(x+y)+f(x-y)=2[f(x)+f(y)]\]
+for all $x,y \in \mathbb{R}$.}
+
+\item{Find solutions $f: \mathbb{R} \to \mathbb{R}$ such that
+\[f(xy)=f(x)+f(y)\]
+
+
+\item{Find a function $f$ defined for $x>0$, so that 
+\[f(xy)=xf(y)+yf(x)\]}
+for all $x,y \in \mathbb{R}$. This is another of $Cauchy's functional equations$.}
+
+\item{Find all functions  $f: \mathbb{Z^+} \to \mathbb{Z^+}$, sucht that
+\[m^2+f(n) | mf(m)+n\]
+for all $m,n \in \mathbb{Z^+}$.}
+
+\item{The strictly increasing function $f(x)$ is defined for all $x>0$ and it assumes positive integral values for all $n \geq 1$.In addition, it satisfies the condition $f[f(n)]=3*n$. Find $f(1994)$.}
+
+
+\item{Find all functions $f,g: \mathbb{R} \to \mathbb{R}$ such that
+\[g(f(x+y))=f(x)+(2x+y)g(y)\]
+for all $x,y \in \mathbb{R}$.}
+
+\item{Let $f: \mathbb{R} \to \mathbb{N}$ be a function that satisfies
+\[f\left(x+\frac{1}{f(y)}\right)=f\left(y+\frac{1}{f(x)}\right),\]
+for all $x,y\in \mathbb{R}$. Prove that there is a positive integer that is not a value of $f$.}
+
+
+\end{enumerate}
+
+\end{document}
+

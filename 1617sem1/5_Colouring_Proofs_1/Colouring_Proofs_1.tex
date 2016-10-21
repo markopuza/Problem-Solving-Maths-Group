@@ -1,0 +1,90 @@
+\documentclass[11pt,a5paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage[margin=0.47in]{geometry}
+\usepackage{graphicx}
+
+\newtheorem{theorem}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem*{Theorem}{Theorem}
+
+\title{\textbf{Colouring Proofs}}
+\date{Problem Solving Group 2016/17  \\
+Semester 1 - Week 5}
+\author{Jonas Wolter}
+
+\begin{document}
+\maketitle
+
+\section{Theory}
+In 1961 it was proven that a chessboard can be covered be $2*1$ dominoes in 12,988,816 ($2^4*901^2$) differnet ways. Hence it seems to be appropiate if we're looking at the problem in how many ways one can cover a chessboard with $2*1$ dominoes where the two opposite corners are missing ;-) Have a go with this!
+
+\subsection{Example}
+In how many ways can a chessboard be covered with $2*1$ dominoes if two squares in opposite corners are missing?\\
+\textbf{Answer:}\\
+Even if this problem seems to be as difficult as the mentioned one or maybe even harder, it is in fact much easier if one knows how to tackle it. Realising that every domino covers exactly one black and one white square we may obtain that $31=\frac{62}{2}$ white and black squares are covered by 31 dominoes. But two squares in opposite corners have the same colour and hence there aren't equally many white and black squares on the board. This implies that the board can't be covered by 31 dominoes.\\[0.2cm]
+
+\noindent 
+The answer that something is \textbf{not} possibe will be the right one in most of the exercises today. In this sense couloring proofs are closely related to the invariance principle. They also involve finding a certain property which is unchangeable but which is different from the one that is asked for. In the example the unchangeable property was the differnce of white and black squares covered. It remains zero with every domino added to the board but is two in the situation we are willing to achieve.\\
+The main difficulty with colouring proofs is finding the right colouring but esppecially this part is also a lot of fun! One can't really give a recipe for this but it often helps to try to achieve the property and analyse why it goes wrong. Bear in mind that the colouring might involve more than two colours.  In general it is helpful to look for symmetric colourings but as always the best way to practice is just to solve problems!
+
+\section{Exercises}
+
+\begin{enumerate}
+
+\item{A rectangular floor is covered by $2*2$ and $1*4$ tiles. One tile got smashed. There is a tile of the other kind available. Show that that floor cannot be covered by those tiles.}
+
+\item{Is there a way to pack 250 $1*1*4$ bricks into a $10*10*10$ box?}
+
+\item{One corner of a $(2n+1)*(2n+1)$ chessboard is cut off. For which $n$ can you cover the remaining squares by $2*1$ dominoes, so that half of the dominoes are horizontal?}
+
+\item{The following figure shows a road map connceting 14 cities. Is there a path passing through each city exactly once?
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=3cm]{Colouring_Proofs_Task_3} 
+\caption{Roadmap}
+\end{center}
+\end{figure}
+}
+
+\item{There is no closed knight tour on a $4*n$ board.}
+
+\item{A beetle sits on each square of a $9*9$ chessboard. At a signal each beetle crawls diagonally onto a neighboring square. Then it may happen that several beetles will sit on some squares and none on others. Find the mininmal possible number of free squares.}
+
+\item{Every point of the plane is coloured red or blue. Show that there exists a rectangle with vertices of the same colour.}
+
+\item{ \emph{The Art Gallery Problem}. An art gallery has the shape of a simple $n$-gon. Find the number of watchmen needed to survey the building, no matter how complicated its shape.}
+
+\item{All vertices of a convex pentagon are lattice points, and its sides have integrals length. Show that its perimeter is even.}
+
+\item{A $23*23$ square is completely tiled by $1*1, 2*2$ and $3*3$ tiles. What is the minimum number of $1*1$ tiles.}
+
+\item{Given a rectangular grid, split into $m*n$ squares, a colouing of the squares in two colours (black and white) is called valid if it saisfies the following contions:
+\begin{itemize}
+\item{All squares touching the border of the grid are coloured black.}
+\item{No four squares forming a $2*2$-square are coloured in the same colour.}
+\item{No four squares forming a $2*2$-square are coloured in such a way that only diagonally touching squares have the same colour.}
+\end{itemize}
+Which grid sizes $m*n$ (with $m,n \geq 3$) have a valid colouring?}
+
+\item{On a $5*5$ board, two players alternately mark numbers on empty cells. The first player always marks 1's, the second 0's. One number is marked per turn, until the board is filled. For each nine $3*3$ squares the sum of the nine numbers on its cells is computed. Denote by A the maximum of these sums. How large can the first player make A, regardless of the response of the second player.}
+
+\item{Let n be an even positive integer. We say that two different cells of an $n*n$ board are \emph{neighboring} if the have a common side. Find the minimal number of cells on the $n*n$ board that must be marked so that every cell (marked or not marked) has a marked neighboring cell.}
+
+
+\item{On a $999*999$ board a \emph{limp rook} can move in the following way:\\
+From any square it can move to any of its adjacent squares, i.e., a square having a common side with it, and every move must be a turn: i.e., the directions of any two consecutive moves must be perpendicular. A \emph{nonintersecting route} of the limp rook consists of a sequence of distinct squares that the limp rook can visit in that order by an admissible sequence of moves. Such a nonintersecting route is called \emph{cyclic} if the limp rook can, after reaching the last square of the route, move directly to the first square of the route and start over again.\\
+How many squares does the longest possible, cyclic, nonintersecting route of a limp rook visit?}
+
+\item{On an infinte square grid, two players alternately mark symbols on empty cells. The first player always marks X's, the second O's. One symbol is marked per turn. The first player wins if there are 11 consecutive X's in a row, column, or diagonal. Prove that the second player can prevent the first from winning.}
+
+\end{enumerate}
+
+
+
+
+
+\end{document}
