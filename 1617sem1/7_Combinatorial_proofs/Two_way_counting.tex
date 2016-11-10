@@ -1,0 +1,138 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{titling}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{changepage}
+\usepackage{enumerate}
+
+\newtheorem{theorem}{}
+\newtheorem{definition}{Definition}
+\newtheorem{exercise}{Exercise}
+\newtheorem{example}{Example}
+\newtheorem{problem}{Problem}
+\newtheorem*{corollary}{Corollary}
+
+\makeatletter
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+\title{\textbf{Counting in two ways}}
+\date{Week 7}
+\author{Miroslav Stankovic \\ Marko Puza}
+\begin{document}
+\maketitle
+
+
+\section{Theory}
+Being able to employ a combinatorial point of view in seemingly non-related problems may often prove very useful - even provide a proof. In the following, we will take a look at a number of identities that can be proved by counting in two different ways. The simple example of usefulness of this technique can be the Handshaking lemma.
+
+\begin{example}[Handshaking lemma]
+For any undirected graph, we have $\sum_{v \in V} deg(v) = 2|E|$. \\ (where we are summing over all vertices $v$, $deg(v)$ is the number of edges connected to vertex $v$ and $|E|$ is the number of edges in the graph)
+\end{example}
+\begin{proof}
+We will prove this lemma by counting in two ways. The number of edge-vertex connections is $\sum_{v \in V}deg(v)$ when we take a look at the connections of each vertex. At the same time, if we take a look at the connections of each edge, the number of edge-vertex connections is $2|E|$.
+\end{proof}
+
+\noindent Let us now define the following, which are most probably very familiar to you, combinatorially.
+
+\begin{definition}[Binomial numbers] ${n}\choose{k}$ is the number of ways how to choose $k$ elements out of $n$.
+\end{definition}
+
+\begin{definition}[Fibonacci numbers] $F_n$ is the number of ways to fill a table of size $(n - 1) \times 1$ by tiles of size $1 \times 1$ and $2 \times 1$.
+\end{definition}
+
+\begin{exercise}
+Convince yourself that the above definitions agree with the usual definitions of a binomial and Fibonacci numbers.
+\end{exercise}
+
+\section{Problems}
+
+\begin{problem}
+See that the number of subsets of a set with $n$ elements is $2^n$.
+\end{problem}
+
+\begin{problem}
+See that ${n \choose k} = {n \choose n - k}$.
+\end{problem}
+
+\begin{problem}
+See that ${n+1 \choose k+1} = {n \choose k} + {n \choose k+1}$.
+\end{problem}
+
+\begin{problem}
+See that $n{n-1 \choose k-1}= k{n \choose k}$.
+\end{problem}
+
+\begin{problem}
+See that $\sum_{i=1}^{n} i = {n+1 \choose 2}$.
+\end{problem}
+
+\begin{problem}
+See that ${n \choose r} = {n - 2 \choose r - 2} + 2{n - 2 \choose r - 1} + {n - 2 \choose r}$.
+\end{problem}
+
+\begin{problem}[Binomial theorem]
+See that $(x+y)^n = \sum_{k=0}^n {n \choose k}x^{n-k}y^k$.
+\end{problem}
+
+
+\begin{problem}
+See that $\sum_{i=1}^n i^2 = 2 {n+1 \choose 3} + {n+1\choose 2}$. Can you derive a formula for $\sum_{i=1}^n i^3$?
+\end{problem}
+
+\begin{problem}
+See that $\sum_{k=0}^n {2k \choose k}{2(n-k)\choose n-k} = 2^{2n}$.
+\end{problem}
+
+\begin{problem}
+See that ${n \choose r}{r \choose k}= {n \choose k}{n-k \choose r-k}$.
+\end{problem}
+
+\begin{problem}
+See that ${2n \choose 2} = 2{n \choose 2} + n^2$.
+\end{problem}
+
+\begin{problem}
+See that $F_n + F_{n+1} = F_{n+2}$.
+\end{problem}
+
+\begin{problem}
+See that the number of ways to fill a table $(n - 1)\times 2$ by tiles of size $2 \times 1$ is $F_n$.
+\end{problem}
+
+\begin{problem}
+See that $F_{a+b+1} = F_{a+1}F_{b+1} + F_{a}F_{b}$.
+\end{problem}
+
+\begin{problem}
+See that $F_{0} + F_{1} + \dots + F_{n} = F_{n+2} - 1$.
+\end{problem}
+
+\begin{problem}
+See that $F_{1} + F_{3} + \dots + F_{2n-1} = F_{2n} - 1$.
+\end{problem}
+
+\begin{problem}
+See that $nF_{0} + (n - 1)F_{1} + \dots + F_{n-1} = F_{n+3} - (n+3)$.
+\end{problem}
+
+\begin{problem}
+See that $F_{2n + 1} = F_n^2 + F_{n+1}^2$.
+\end{problem}
+
+\begin{problem}[Number of divisors]
+See that for number $n$ with prime factorization $n = p_1^{a_1}p_2^{a_2}\dots p_k^{a_k}$ the number of its divisors is $(a_1 + 1)(a_2 + 1) \cdots (a_k + 1)$.
+\end{problem}
+
+\end{document}
