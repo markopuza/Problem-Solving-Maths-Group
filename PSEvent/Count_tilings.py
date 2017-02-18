@@ -7,6 +7,16 @@ with dominoes.
 Written for the Problem Solving event at FCL 2017
 """
 
+def boolarray_to_mask(arr):
+    # arr = [[1, 0, 1], [1, 1, 1], [1, 1, 1]]
+    mask = []
+    for row in arr:
+        num = 0
+        for i in range(len(row)):
+            if row[i]:
+                num |= (1 << i)
+        mask.append(num)
+    return tuple(mask)
 
 def tilings(m, n):
     ''' counts the number of tilings '''
